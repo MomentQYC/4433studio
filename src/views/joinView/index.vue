@@ -1,32 +1,47 @@
-
 <template>
   <div class="joinBox">
     <div class="joinTitle">
-    JOIN US
-    <div class="inforTitle3">来和我们一起玩一种不被定义的开发</div>
+      JOIN US
+      <div class="inforTitle3">来和我们一起玩一种不被定义的开发</div>
     </div>
 
     <div class="contentBox">
       <img @dragstart.prevent src="@/assets/join.png" alt="" class="joinImg" />
-      
     </div>
     <div class="joinInfo">
-    
-      <el-divider>个人信息</el-divider>
+      <el-divider style="width: 20px !important">个人信息</el-divider>
       <el-form ref="formData" :model="formData" inline label-width="180px">
-        <el-form-item label="名称：" prop="address" style="margin-top:20px">
+        <el-form-item label="名称：" prop="address" style="margin-top: 20px">
           <el-input
             v-model="formData.joinName"
             placeholder="请输入你的名称~"
           ></el-input>
         </el-form-item>
-        <el-form-item label="擅长领域：" prop="address" style="margin-top:20px">
+        <el-form-item
+          label="联系方式："
+          prop="address"
+          style="margin-top: 20px"
+        >
+          <el-input
+            v-model="formData.joinName"
+            placeholder="请输入QQ号~"
+          ></el-input>
+        </el-form-item>
+        <el-form-item
+          label="擅长领域："
+          prop="address"
+          style="margin-top: 20px"
+        >
           <el-input
             v-model="formData.joinName"
             placeholder="请输入擅长领域~"
           ></el-input>
         </el-form-item>
-        <el-form-item label="个人优秀作品：" prop="address" style="margin-top:20px">
+        <el-form-item
+          label="个人优秀作品："
+          prop="address"
+          style="margin-top: 20px"
+        >
           <el-upload
             class="upload-demo"
             drag
@@ -37,14 +52,14 @@
             <div class="el-upload__text" style="color: #fff">
               将文件拖到此处，或<em>点击上传</em>
             </div>
-            <div class="el-upload__tip" slot="tip" style="color: #fff;" >
+            <div class="el-upload__tip" slot="tip" style="color: #fff">
               * 只能上传jpg/png文件，且不超过500kb *
             </div>
           </el-upload>
         </el-form-item>
-        <el-form-item style="width:100%;text-align: right;margin-top: 50px;">
+        <el-form-item style="width: 100%; text-align: right; margin-top: 50px">
           <el-button type="primary" plain>立即提交</el-button>
-          <el-button  plain>重置</el-button>
+          <el-button plain>重置</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -73,7 +88,7 @@ export default {
     margin-left: 100px;
     margin-top: 50px;
     .inforTitle3 {
-        margin-top: 10px;
+      margin-top: 10px;
       font-size: 16px;
     }
   }
@@ -91,7 +106,7 @@ export default {
   .joinInfo {
     width: 600px;
     height: 820px;
-    margin-top: 40px;
+    margin-top: 110px;
     margin-left: 130px;
   }
 }
