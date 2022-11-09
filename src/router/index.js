@@ -1,3 +1,13 @@
+/*
+ * @Author: Chai chai 2787922490@qq.com
+ * @Date: 2022-11-08 21:59:40
+ * @LastEditors: Chai chai 2787922490@qq.com
+ * @LastEditTime: 2022-11-09 22:28:38
+ * @FilePath: \4433studio\src\router\index.js
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by Chai chai 2787922490@qq.com, All Rights Reserved. 
+ */
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -12,13 +22,13 @@ const routes = [
     component: HomeView
   },
   {
-    path:'/team',
-    name:'team',
+    path: '/team',
+    name: 'team',
     component: () => import('@/views/teamView/index.vue')
   },
   {
-    path:'/join',
-    name:'join',
+    path: '/join',
+    name: 'join',
     component: () => import('@/views/joinView/index.vue')
   },
   // {

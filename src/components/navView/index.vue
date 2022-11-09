@@ -1,3 +1,13 @@
+<!--
+ * @Author: Chai chai 2787922490@qq.com
+ * @Date: 2022-11-08 22:36:45
+ * @LastEditors: Chai chai 2787922490@qq.com
+ * @LastEditTime: 2022-11-09 23:00:18
+ * @FilePath: \4433studio\src\components\navView\index.vue
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by Chai chai 2787922490@qq.com, All Rights Reserved. 
+-->
 <template>
   <nav class="navBar">
     <div class="logoBox">
@@ -20,25 +30,50 @@
         <el-menu-item index="join">加入我们</el-menu-item>
         <el-menu-item index="5">联系我们</el-menu-item>
       </el-menu>
-      <button class="loginBtn">登录</button>
-      <button class="regiestBtn">注册</button>
+      <el-button class="loginBtn" @click="userLogin(true)">登录</el-button>
+      <el-button class="regiestBtn" @click="userRegiest(true)">注册</el-button>
     </div>
+    <el-dialog title="登录" :visible.sync="dialogFormVisibleL" width="500px">
+      <loginView ref="loginView" @userLogin="userLogin" />
+    </el-dialog>
+    <el-dialog title="注册" :visible.sync="dialogFormVisibleR" width="500px">
+      <regiestView ref="regiestView" @userRegiest="userRegiest" />
+    </el-dialog>
   </nav>
 </template>
 
 <script>
+import loginView from "@/components/loginView/index.vue";
+import regiestView from "@/components/regiestView/index.vue";
 export default {
+  components: { loginView, regiestView },
   data() {
     return {
-      activeIndex: '1'
-    }
+      activeIndex: "1",
+      dialogFormVisibleL: false,
+      dialogFormVisibleR: false,
+    };
   },
   methods: {
     handleSelect(key, keyPath) {
-      console.log(key, keyPath)
-    }
-  }
-}
+      console.log(key, keyPath);
+    },
+    userLogin(type) {
+      if (type) {
+        this.dialogFormVisibleL = true;
+      } else {
+        this.dialogFormVisibleL = false;
+      }
+    },
+    userRegiest(type) {
+      if (type) {
+        this.dialogFormVisibleR = true;
+      } else {
+        this.dialogFormVisibleR = false;
+      }
+    },
+  },
+};
 </script>
 
 <style lang="scss">
@@ -65,9 +100,7 @@ export default {
     align-items: center;
     .loginBtn {
       padding: 8px 30px;
-      border-radius: 50px;
       color: #fff;
-      border: 1px solid #fff;
       background: rgba($color: #000000, $alpha: 0.3);
       margin-right: 20px;
       margin-left: 30px;
@@ -75,9 +108,7 @@ export default {
     }
     .regiestBtn {
       padding: 8px 30px;
-      border-radius: 50px;
       color: #fff;
-      border: 1px solid #fff;
       background: rgba($color: #000000, $alpha: 0.3);
       margin-top: 5px;
     }

@@ -1,11 +1,12 @@
 <!--
- * @Author: fengyuanyao fengyuanyao@fanyu.com
- * @Date: 2022-11-09 08:40:53
- * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
- * @LastEditTime: 2022-11-09 15:37:31
- * @FilePath: \4433studio\4433studio\src\App.vue
+ * @Author: Chai chai 2787922490@qq.com
+ * @Date: 2022-11-08 21:59:40
+ * @LastEditors: Chai chai 2787922490@qq.com
+ * @LastEditTime: 2022-11-09 22:29:04
+ * @FilePath: \4433studio\src\App.vue
+ * @Description: 
  * 
- * Copyright (c) 2022 by error: git config user.name && git config user.email & please set dead value or install git, All Rights Reserved. 
+ * Copyright (c) 2022 by Chai chai 2787922490@qq.com, All Rights Reserved. 
 -->
 <template>
   <div id="app">

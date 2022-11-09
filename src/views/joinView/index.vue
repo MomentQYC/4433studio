@@ -1,3 +1,13 @@
+<!--
+ * @Author: Chai chai 2787922490@qq.com
+ * @Date: 2022-11-09 20:41:58
+ * @LastEditors: Chai chai 2787922490@qq.com
+ * @LastEditTime: 2022-11-09 22:28:53
+ * @FilePath: \4433studio\src\views\joinView\index.vue
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by Chai chai 2787922490@qq.com, All Rights Reserved. 
+-->
 <template>
   <div class="joinBox">
     <div class="joinTitle">
@@ -9,8 +19,15 @@
       <img @dragstart.prevent src="@/assets/join.png" alt="" class="joinImg" />
     </div>
     <div class="joinInfo">
-      <el-divider style="width: 20px !important">个人信息</el-divider>
-      <el-form ref="formData" :model="formData" inline label-width="180px">
+      <el-divider>个人信息</el-divider>
+      <el-form
+        ref="formData"
+        :model="formData"
+        inline
+        label-width="140px"
+        label-position="left"
+        class="elFrom"
+      >
         <el-form-item label="名称：" prop="address" style="margin-top: 20px">
           <el-input
             v-model="formData.joinName"
@@ -53,13 +70,13 @@
               将文件拖到此处，或<em>点击上传</em>
             </div>
             <div class="el-upload__tip" slot="tip" style="color: #fff">
-              * 只能上传jpg/png文件，且不超过500kb *
+              * 只能上传zip文件，且不超过500kb *
             </div>
           </el-upload>
         </el-form-item>
-        <el-form-item style="width: 100%; text-align: right; margin-top: 50px">
-          <el-button type="primary" plain>立即提交</el-button>
-          <el-button plain>重置</el-button>
+        <el-form-item style="width: 100%; margin-left: 70px; margin-top: 10px">
+          <el-button class="submit">立即提交</el-button>
+          <el-button class="reset">重置</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -108,6 +125,17 @@ export default {
     height: 820px;
     margin-top: 110px;
     margin-left: 130px;
+    .elFrom {
+      text-align: center;
+    }
+  }
+  .submit {
+    color: #fff;
+    background: rgba($color: #000000, $alpha: 0.1);
+  }
+  .reset {
+    color: #fff;
+    background: rgba($color: #000000, $alpha: 0.1);
   }
 }
 </style>
