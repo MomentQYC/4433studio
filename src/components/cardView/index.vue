@@ -12,7 +12,9 @@
           <div class="line"></div>
         </div>
         <div class="tags">
-          <div v-for="(tag, index) in tags" :key="index" class="tag">{{ tag }}</div>
+          <div v-for="(tag, index) in tags" :key="index" class="tag">
+            {{ tag }}
+          </div>
         </div>
         <div class="bio">
           {{ selfContent }}
@@ -26,20 +28,20 @@
 export default {
   props: {
     imgUrl: {
-      required: true
+      required: true,
     },
     name: {
-      required: true
+      required: true,
     },
     selfContent: {
-      require: true
+      require: true,
     },
     tags: {
       type: Array,
-      require: true
-    }
-  }
-}
+      require: true,
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -49,7 +51,7 @@ export default {
   overflow: hidden;
   background-color: #ccc;
   margin-bottom: 20px;
-  filter: grayscale(1);
+  // filter: grayscale(1);
   position: relative;
   box-sizing: border-box;
   border-radius: 5px;
@@ -82,7 +84,7 @@ export default {
     height: 0;
     transition: height 0.3s;
     backdrop-filter: blur(20px);
-    background: rgba(39, 139, 255, 0.3);
+    background: rgba(39, 139, 255, 0.7);
     .name {
       font-size: 25px;
       font-weight: 600;
