@@ -1,3 +1,4 @@
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '@/views/homeView/index.vue'
@@ -10,6 +11,11 @@ const routes = [
     name: 'home',
     component: HomeView
   },
+  {
+    path:'/team',
+    name:'team',
+    component: () => import('@/views/teamView/index.vue')
+  }
   // {
   //   path: '/about',
   //   name: 'about',
