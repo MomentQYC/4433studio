@@ -1,112 +1,121 @@
-
 <template>
-  <div>
-    <section>
-			<div class="card">
-				<div class="box">
-					<div class="imgBx">
-						<img :src="imgUrl" alt="">
-					</div>
-					<div class="contentBx">
-						<div>
-							<h2>{{name}}</h2>
-							<p>{{ selfContent}}
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+  <div class="card-warp">
+    <div class="content">
+      <div class="cover">
+        <img :src="imgUrl" alt="" />
+      </div>
+    </div>
+    <div class="mask">
+      <div class="description">
+        <div class="name">
+          {{ name }}
+          <div class="line"></div>
+        </div>
+        <div class="tags">
+          <div v-for="(tag, index) in tags" :key="index" class="tag">{{ tag }}</div>
+        </div>
+        <div class="bio">
+          {{ selfContent }}
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-props:{
+  props: {
     imgUrl: {
-      required: true,
+      required: true
     },
-    name:{
-        required:true
+    name: {
+      required: true
     },
-    selfContent:{
-        require:true
+    selfContent: {
+      require: true
+    },
+    tags: {
+      type: Array,
+      require: true
     }
-}
+  }
 }
 </script>
 
-<style>
-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    transform-style: preserve-3d;
-    /* width: 1100px; */
-}
-section .card{
-    position: relative;
-    width: 320px;
-    height: 320px;
-    margin: 20px;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-}
-section .card .box{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+<style lang="scss" scoped>
+.card-warp {
+  width: 24%;
+  height: 32vh;
+  overflow: hidden;
+  background-color: #ccc;
+  margin-bottom: 20px;
+  filter: grayscale(1);
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 5px;
+  &:hover {
+    filter: unset;
+    cursor: pointer;
+    .mask {
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+    }
+  }
+  .content {
     height: 100%;
-    transform-style: preserve-3d;
-    transition: 1s ease;
-}
-section .card:hover .box{
-    transform: rotateY(180deg);
-}
-section .card .box .imgBx{
+    .cover {
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .mask {
     position: absolute;
-    top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-}
-section .card .box .imgBx img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-section .card .box .contentBx{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #333;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform-style: preserve-3d;
-    transform: rotateY(180deg);
-}
-section .card .box .contentBx div{
-    transform-style: preserve-3d;
-    padding: 20px;
-    background: linear-gradient(45deg,#fe0061,#ffeb3b);
-    transform: translateZ(100px);
-}
-section .card .box .contentBx div h2{
-    color: #fff;
-    font-size: 20px;
-    letter-spacing: 1px;
-}
-section .card .box .contentBx div p{
-    color: #fff;
-    font-size: 16px;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    transition: height 0.3s;
+    backdrop-filter: blur(20px);
+    background: rgba(39, 139, 255, 0.3);
+    .name {
+      font-size: 25px;
+      font-weight: 600;
+      padding: 15px;
+      .line {
+        width: 40px;
+        height: 6px;
+        background-image: linear-gradient(to right, #71b7fe, #1c81ff);
+        margin-top: -6px;
+      }
+    }
+    .tags {
+      margin: 0 15px;
+      display: flex;
+      flex-wrap: wrap;
+      .tag {
+        font-size: 14px;
+        font-weight: normal;
+        padding: 5px 10px;
+        background-image: linear-gradient(to right, #71b7fe, #1c81ff);
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-right: 5px;
+      }
+    }
+    .bio {
+      word-wrap: break-word;
+      line-height: 1.5;
+      padding: 15px;
+      font-size: 18px;
+      text-align: justify;
+      text-align-last: left;
+    }
+  }
 }
 </style>
