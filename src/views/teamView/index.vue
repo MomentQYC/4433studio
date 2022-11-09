@@ -10,61 +10,94 @@
 
 <template>
   <div class="bB">
-    <div class="teamTitle">OUR TEAM</div>
+    <div class="teamTitle">TEAM OF US</div>
     <div class="cardBox">
       <cardView
-        name="柴柴"
-        selfContent="（前端组组长）vue二次元个人博客模板作者，热爱花里胡哨的前端开发"
-        imgUrl="https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/chaichai.jpg"
-      ></cardView>
-      <cardView
-        name="旧颜"
-        selfContent="(后端组组长)励志成为一个十八线后端程序员！"
-        imgUrl="https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/jy.png"
-      ></cardView>
-      <cardView
-        name="张三同学"
-        selfContent="我的城科微信小程序作者，吴亦凡十年牢粉"
-        imgUrl="https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/zs.jpg"
-      ></cardView>
-      <cardView
-        name="鲨鲨"
-        selfContent="无所谓，我会出手"
-        imgUrl="https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/ss.jpg"
-      ></cardView>
-      <cardView
-        name="渣男"
-        selfContent="我真的想让这个世界变得更好，但是他们不给我源代码……"
-        imgUrl="https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/zn.png"
-      ></cardView>
-      <cardView
-        name="轩轩"
-        selfContent="代码乱得只有自己能看懂，公司不可替代的重要人才"
-        imgUrl="https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/yz.jpg"
+        v-for="(user, index) in teams"
+        :key="index"
+        :name="user.name"
+        :tags="user.tags"
+        :selfContent="user.selfContent"
+        :imgUrl="user.imgUrl"
       ></cardView>
     </div>
   </div>
 </template>
 
 <script>
-import cardView from "@/components/cardView/index.vue";
+import cardView from '@/components/cardView/index.vue'
 export default {
   components: { cardView },
-};
+  data: () => {
+    return {
+      teams: [
+        {
+          name: '柴柴',
+          tags: ['前端负责人', '前端工程师'],
+          selfContent: 'vue二次元个人博客模板作者，热爱花里胡哨的前端开发',
+          imgUrl: 'https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/chaichai.jpg'
+        },
+        {
+          name: '旧颜',
+          tags: ['后端负责人', '后端工程师'],
+          selfContent: '立志成为一个十八线后端程序员！',
+          imgUrl: 'https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/jy.png'
+        },
+        {
+          name: '百梦',
+          tags: ['首席架构师'],
+          selfContent: '不想多说',
+          imgUrl: ''
+        },
+        {
+          name: '鲨鲨',
+          tags: ['后端工程师'],
+          selfContent: '无所谓，我会出手',
+          imgUrl: 'https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/ss.jpg'
+        },
+        {
+          name: '屁屁',
+          tags: ['UI设计师'],
+          selfContent: '不想多说',
+          imgUrl: ''
+        },
+        {
+          name: '张三同学',
+          tags: ['前端工程师'],
+          selfContent: '爱搞事的闲散青年，兴趣广泛，善于行动，热爱生活，立志成为一名18线全栈攻城狮，我的城科微信小程序作者。',
+          imgUrl: 'https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/zs.jpg'
+        },
+        {
+          name: '渣男',
+          tags: ['后端工程师'],
+          selfContent: '我真的想让这个世界变得更好，但是他们不给我源代码……',
+          imgUrl: 'https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/zn.png'
+        },
+        {
+          name: '轩轩',
+          tags: ['后端工程师'],
+          selfContent: '代码乱得只有自己能看懂，公司不可替代的重要人才',
+          imgUrl: 'https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/yz.jpg'
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style>
-.bB{
-    overflow: hidden;
+.bB {
+  overflow: hidden;
 }
-.teamTitle{
-    font-weight: 550;
-    font-size: 30px;
-    margin-left: 100px;
-    margin-top: 50px;
+.teamTitle {
+  font-weight: 550;
+  font-size: 30px;
+  margin-top: 50px;
+  margin-bottom: 60px;
+  text-align: center;
 }
 .cardBox {
-  width: 60vw;
+  width: 70vw;
   /* height: 80vh; */
   flex-wrap: wrap;
   display: flex;
