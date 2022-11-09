@@ -22,7 +22,7 @@
       <el-menu-item index="/" class="mengceng">首页</el-menu-item>
       <el-menu-item index="team">团队介绍</el-menu-item>
       <el-menu-item index="3">作品展示</el-menu-item>
-      <el-menu-item index="4">加入我们</el-menu-item>
+      <el-menu-item index="join">加入我们</el-menu-item>
       <el-menu-item index="5">联系我们</el-menu-item>
     </el-menu>
   </nav>

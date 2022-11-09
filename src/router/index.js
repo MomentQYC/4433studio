@@ -15,7 +15,12 @@ const routes = [
     path:'/team',
     name:'team',
     component: () => import('@/views/teamView/index.vue')
-  }
+  },
+  {
+    path:'/join',
+    name:'join',
+    component: () => import('@/views/joinView/index.vue')
+  },
   // {
   //   path: '/about',
   //   name: 'about',
