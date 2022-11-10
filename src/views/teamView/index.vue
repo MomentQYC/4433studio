@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
  * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
- * @LastEditTime: 2022-11-10 15:26:47
+ * @LastEditTime: 2022-11-10 16:24:39
  * @FilePath: \4433studio\src\views\teamView\index.vue
  * @Description: 
  * 

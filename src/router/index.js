@@ -31,6 +31,11 @@ const routes = [
     name: 'join',
     component: () => import('@/views/joinView/index.vue')
   },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: () => import('@/views/contactView/index.vue')
+  },
   // {
   //   path: '/about',
   //   name: 'about',
