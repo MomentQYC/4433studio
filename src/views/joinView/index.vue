@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
- * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
- * @LastEditTime: 2022-11-10 15:26:07
+ * @LastEditors: Chai chai 2787922490@qq.com
+ * @LastEditTime: 2022-11-10 23:40:38
  * @FilePath: \4433studio\src\views\joinView\index.vue
  * @Description: 
  * 
@@ -56,7 +56,7 @@
           ></el-input>
         </el-form-item>
         <el-form-item
-          label="个人优秀作品："
+          label="个人优秀作品上传"
           prop="address"
           style="margin-top: 20px"
         >
@@ -73,9 +73,14 @@
             <div class="el-upload__tip" slot="tip" style="color: #fff">
               * 只能上传zip文件，且不超过500kb *
             </div>
+            <div class="el-upload__tip" slot="tip" style="color: #fff">
+              *
+              个人作品上传仅用作考核，本工作室不会以任何形式保存、公开、使用上传的个人作品，并将定期清空缓存
+              *
+            </div>
           </el-upload>
         </el-form-item>
-        <el-form-item style="width: 100%; margin-left: 70px; margin-top: 10px">
+        <el-form-item style="width: 100%; margin-left: 80px; margin-top: 10px">
           <el-button class="submit">立即提交</el-button>
           <el-button class="reset">重置</el-button>
         </el-form-item>
