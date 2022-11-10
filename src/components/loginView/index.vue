@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 22:29:24
- * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2022-11-09 23:24:22
+ * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
+ * @LastEditTime: 2022-11-10 08:53:10
  * @FilePath: \4433studio\src\components\loginView\index.vue
  * @Description: 
  * 
@@ -10,6 +10,7 @@
 -->
 <template>
   <div>
+    <!-- 登陆表单 -->
     <el-form
       ref="formData"
       :model="formData"
@@ -49,6 +50,10 @@ export default {
     };
   },
   methods: {
+    /**
+     * @description: 关闭弹窗
+     * @return {*}
+     */
     cancel() {
       this.$emit("userLogin", false);
     },

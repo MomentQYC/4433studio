@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
- * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2022-11-09 22:28:59
+ * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
+ * @LastEditTime: 2022-11-10 15:26:47
  * @FilePath: \4433studio\src\views\teamView\index.vue
  * @Description: 
  * 
@@ -12,6 +12,7 @@
 <template>
   <div class="bB">
     <div class="teamTitle">TEAM OF US</div>
+    <!-- 卡片 -->
     <div class="cardBox">
       <cardView
         v-for="(user, index) in teams"

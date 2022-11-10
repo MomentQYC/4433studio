@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-08 22:36:45
- * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2022-11-09 23:00:18
+ * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
+ * @LastEditTime: 2022-11-10 08:50:08
  * @FilePath: \4433studio\src\components\navView\index.vue
  * @Description: 
  * 
@@ -10,9 +10,11 @@
 -->
 <template>
   <nav class="navBar">
+    <!-- logo -->
     <div class="logoBox">
       <img src="@/assets/4433white.png" alt="4433工作室logo" class="logo" />
     </div>
+    <!-- 导航 -->
     <div class="navs">
       <el-menu
         :default-active="activeIndex"
@@ -21,7 +23,6 @@
         background-color="#000"
         text-color="#fff"
         active-text-color="rgb(220,223,230)"
-        @select="handleSelect"
         router
       >
         <el-menu-item index="/" class="mengceng">首页</el-menu-item>
@@ -33,6 +34,7 @@
       <el-button class="loginBtn" @click="userLogin(true)">登录</el-button>
       <el-button class="regiestBtn" @click="userRegiest(true)">注册</el-button>
     </div>
+    <!-- 登陆注册弹窗 -->
     <el-dialog title="登录" :visible.sync="dialogFormVisibleL" width="500px">
       <loginView ref="loginView" @userLogin="userLogin" />
     </el-dialog>
@@ -55,9 +57,11 @@ export default {
     };
   },
   methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
-    },
+    /**
+     * @description: 用户登录弹窗显示隐藏
+     * @param {*} type
+     * @return {*}
+     */
     userLogin(type) {
       if (type) {
         this.dialogFormVisibleL = true;
@@ -65,6 +69,11 @@ export default {
         this.dialogFormVisibleL = false;
       }
     },
+    /**
+     * @description: 用户注册弹窗显示隐藏
+     * @param {*} type
+     * @return {*}
+     */
     userRegiest(type) {
       if (type) {
         this.dialogFormVisibleR = true;

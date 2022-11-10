@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
- * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2022-11-09 22:28:53
+ * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
+ * @LastEditTime: 2022-11-10 15:26:07
  * @FilePath: \4433studio\src\views\joinView\index.vue
  * @Description: 
  * 
@@ -14,10 +14,11 @@
       JOIN US
       <div class="inforTitle3">来和我们一起玩一种不被定义的开发</div>
     </div>
-
+    <!-- 左侧图片 -->
     <div class="contentBox">
       <img @dragstart.prevent src="@/assets/join.png" alt="" class="joinImg" />
     </div>
+    <!-- 表单 -->
     <div class="joinInfo">
       <el-divider>个人信息</el-divider>
       <el-form
