@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-08 22:02:00
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2022-11-09 22:28:46
+ * @LastEditTime: 2023-02-09 16:57:32
  * @FilePath: \4433studio\src\views\homeView\index.vue
  * @Description: 
  * 
@@ -60,6 +60,7 @@ export default {
 <style lang="scss">
 .homeBg {
   position: absolute;
+  background: #000;
   overflow: hidden;
 
   .ContentBox {
@@ -70,7 +71,6 @@ export default {
       font-size: 55px;
       letter-spacing: 2px;
     }
-
     .content {
       margin-top: 20px;
       font-size: 25px;

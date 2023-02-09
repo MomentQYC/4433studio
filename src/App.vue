@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-08 21:59:40
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2022-11-09 22:29:04
+ * @LastEditTime: 2023-02-09 16:57:11
  * @FilePath: \4433studio\src\App.vue
  * @Description: 
  * 
@@ -28,8 +28,7 @@ export default {
 }
 #app {
   overflow: hidden;
-
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: #000;
   color: #fff;

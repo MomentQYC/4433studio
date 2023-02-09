@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2022-11-10 23:40:38
+ * @LastEditTime: 2023-02-09 16:13:32
  * @FilePath: \4433studio\src\views\joinView\index.vue
  * @Description: 
  * 
@@ -16,7 +16,8 @@
     </div>
     <!-- 左侧图片 -->
     <div class="contentBox">
-      <img @dragstart.prevent src="@/assets/join.png" alt="" class="joinImg" />
+      <!-- <img @dragstart.prevent src="@/assets/join.png" alt="" class="joinImg" /> -->
+      <div id="myChart" class="echarts" style="width: 740px; height: 740px" />
     </div>
     <!-- 表单 -->
     <div class="joinInfo">
@@ -80,9 +81,9 @@
             </div>
           </el-upload>
         </el-form-item>
-        <el-form-item style="width: 100%; margin-left: 80px; margin-top: 10px">
-          <el-button class="submit">立即提交</el-button>
-          <el-button class="reset">重置</el-button>
+        <el-form-item style="position:relative; width: 100%; margin-left: 80px; margin-top: 10px">
+          <el-button id="Bn" class="submit" @mouseover.native="notRun && run($event)" @click="SendEail" style="position:absolute; left:-100px; top:0px;">{{isRun?'很急，欸~':'立即提交'}}</el-button>
+          <el-button  class="reset">重置</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -90,13 +91,184 @@
 </template>
   
   <script>
+
+import "echarts-wordcloud/dist/echarts-wordcloud";
+import "echarts-wordcloud/dist/echarts-wordcloud.min";
 export default {
+  mounted() {
+    this.getEcharts();
+  },
   data() {
     return {
+      notRun:true,
+      flag: 1,
+      isRun:false,
       formData: {
         joinName: "",
       },
     };
+  },
+
+  methods: {
+    run(e) {
+      this.isRun = true
+      var Bn = document.getElementById("Bn");
+      var aWidth =
+        document.body.clientWidth || document.documentElement.clientWidth;
+      var aHeight =
+        document.body.clientHeight || document.documentElement.clientHeight;
+      var sJs1 = Math.floor(Math.random() * aHeight);
+      var sJs2 = Math.floor(Math.random() * aWidth);
+      if(this.flag === 10) {
+        this.$message.success('开个玩笑 ο(=•ω＜=)ρ⌒☆ 不逗你啦~')
+        this.isRun = false
+        this.notRun = false
+      } else {
+        Bn.style.top = -sJs1/2 + "px";
+        Bn.style.left = -sJs2/2 + "px";
+        this.flag ++;
+      }
+    },
+    /**
+     * @description: 渲染图表
+     * @return {*}
+     */
+    getEcharts() {
+      const myChart = this.$echarts.init(document.getElementById("myChart"));
+      var keywords = {
+        改变世界: 221990,
+        任重道远: 10288,
+        心之所愿: 11620,
+        无所不成: 27447,
+        放手去做: 12311,
+        无畏过错: 11206,
+        不鸣则已: 14885,
+        一鸣惊人: 32294,
+        "00后": 18574,
+        不被定义的开发: 38929,
+        加入我们: 11969,
+        "网页就该平平无奇？": 37517,
+        我们是如此年轻: 12053,
+        "吃了吗您？": 57299,
+        "chaichai socute": 15418,
+        "just do it": 22905,
+        "拒绝996！": 5146,
+        百梦蠢狗: 49487,
+        天天抖手: 33837,
+        精神抖擞: 4500,
+        很抱歉打扰你: 5744,
+        但你要知道: 4840,
+        美好的一天: 232,
+        从提肛开始: 3706,
+        我超酷的: 4812,
+        嗨嗨嗨: 16578,
+        "为斯卡蒂献上心脏！": 24347,
+        我很想你: 43420,
+        年轻且有病: 25222,
+        geo: 16904,
+        parallelAxis: 4029,
+        parallel: 5319,
+        max: 3393,
+        BB: 43066,
+        heatmap: 3110,
+        我们是: 20285,
+        animationDuration: 3425,
+        animationDelay: 2431,
+        splitNumber: 5175,
+        大爷来玩啊: 12738,
+        "4433工作室": 7133,
+        axisTick: 8831,
+        "加班？给钱！": 17516,
+        pointer: 590,
+        "你真不来？": 23426,
+        柴柴: 38497,
+        slider: 7236,
+        灰灰: 66514,
+        鲨鲨: 28516,
+        smooth: 1295,
+        渣男: 12815,
+        saveAsImage: 2616,
+        polar: 6279,
+        我是布洛特亨德尔: 9419,
+        show: 20620,
+        text: 2592,
+        icon: 2782,
+        dimension: 478,
+        inRange: 1060,
+        提肛了吗: 89459,
+        angleAxis: 5469,
+        dataView: 2754,
+        timeline: 10104,
+        魔法少女: 5732,
+        target: 1433,
+        狂少: 5361,
+        inside: 8913,
+        xAxisIndex: 3843,
+        orient: 4205,
+        nameGap: 4896,
+        hoverAnimation: 2307,
+        legendHoverLink: 3553,
+        老年痴呆: 3292,
+        opacity: 3097,
+        屁屁: 6475,
+        轩轩: 2238,
+        lines: 6403,
+        墨卿: 2608,
+        现在不嗨: 7477,
+        width: 4338,
+        categories: 1000,
+        叫我女王大人: 3825,
+        barGap: 1094,
+        barWidth: 1521,
+        coordinateSystem: 3622,
+        z: 4014,
+        polarIndex: 1456,
+        shadowOffsetX: 3046,
+        shadowColor: 3771,
+        shadowOffsetY: 2475,
+      };
+      var data = [];
+      for (var name in keywords) {
+        data.push({
+          name: name,
+          value: Math.sqrt(keywords[name]),
+        });
+      }
+      // var maskImage = new Image();
+      var option = {
+        backgroundColor: "#000",
+        series: [
+          {
+            name: "joinUs",
+            type: "wordCloud",
+            //size: ['9%', '99%'],
+            sizeRange: [11, 80],
+            //textRotation: [0, 45, 90, -45],
+            rotationRange: [-45, 90],
+            //shape: 'circle',
+            // maskImage: maskImage,
+            textPadding: 0,
+            autoSize: {
+              enable: true,
+              minSize: 6,
+            },
+            textStyle: {
+              color: function () {
+                return "#fff";
+              },
+              emphasis: {
+                shadowBlur: 10,
+                shadowColor: "#333",
+              },
+            },
+            data: data,
+          },
+        ],
+      };
+      // maskImage.onload = function() {
+      myChart.setOption(option);
+      // };
+    },
   },
 };
 </script>
@@ -109,7 +281,7 @@ export default {
     font-weight: 550;
     font-size: 30px;
     margin-left: 100px;
-    margin-top: 50px;
+    // margin-top: 30px;
     .inforTitle3 {
       margin-top: 10px;
       font-size: 16px;
@@ -118,10 +290,10 @@ export default {
   .contentBox {
     user-select: none;
     border: 2px solid #fff;
-    margin-top: 140px;
+    margin-top: 80px;
     margin-left: -100px;
-    width: 700px;
-    height: 700px;
+    width: 740px;
+    height: 740px;
     .joinImg {
       width: 100%;
     }
@@ -129,8 +301,8 @@ export default {
   .joinInfo {
     width: 600px;
     height: 820px;
-    margin-top: 110px;
-    margin-left: 130px;
+    margin-top: 80px;
+    margin-left: 170px;
     .elFrom {
       text-align: center;
     }
@@ -165,5 +337,18 @@ export default {
 }
 .el-upload-dragger {
   background: #000;
+}
+</style>
+
+<style>
+.el-message--success {
+  background-color: rgb(0, 0, 0)!important;
+  border-color: #fff!important;
+}
+.el-message__content{
+  color: #fff!important;
+}
+.el-message .el-icon-success {
+  color: #fff!important;
 }
 </style>
