@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
- * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-02-10 10:15:40
+ * @LastEditors: Nico
+ * @LastEditTime: 2023-02-10 18:55:51
  * @FilePath: \4433studio\src\views\teamView\index.vue
  * @Description: 
  * 
@@ -86,6 +86,30 @@ export default {
           tags: ['前端工程师'],
           selfContent: '每次npm run 就像开奖,见红直接开摆',
           imgUrl: 'https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/mm.jpg'
+        },
+        {
+          name: '土豆',
+          tags: ['后端工程师'],
+          selfContent: '给你最完美的数据就是return True',
+          imgUrl: 'https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/td.jpg'
+        },
+        {
+          name: '小七',
+          tags: ['前端工程师'],
+          selfContent: '是个前端，开发练习两年半只会v2，v3学习中',
+          imgUrl: 'https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/xq.jpg'
+        },
+        {
+          name: '斯普努尔',
+          tags: ['前端工程师'],
+          selfContent: '春恨秋悲皆自惹，bugbug快走开',
+          imgUrl: 'https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/qpne.jpg'
+        },
+        {
+          name: 'SAO2233',
+          tags: ['前端工程师'],
+          selfContent: 'react，vue',
+          imgUrl: 'https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/SAO2233.jpg'
         }
       ]
     }
