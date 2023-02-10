@@ -35,7 +35,7 @@ export default {
       teams: [
         {
           name: "柴柴",
-          tags: ["前端负责人", "前端工程师","工作室负责人"],
+          tags: ["前端负责人", "前端工程师", "工作室负责人"],
           selfContent:
             "vue二次元个人博客模板作者，热爱花里胡哨的开发，涉猎广泛，励志做一名优秀的、花里胡哨的程序员",
           imgUrl:
@@ -43,7 +43,7 @@ export default {
         },
         {
           name: "张三同学",
-          tags: ["前端工程师","工作室副负责人"],
+          tags: ["前端工程师", "工作室副负责人"],
           selfContent:
             "爱搞事的闲散青年，兴趣广泛，善于行动，热爱生活，立志成为一名18线全栈攻城狮，我的城科微信小程序作者。",
           imgUrl:
@@ -97,6 +97,34 @@ export default {
           selfContent: "每次npm run 就像开奖,见红直接开摆",
           imgUrl:
             "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/mm.jpg",
+        },
+        {
+          name: "土豆",
+          tags: ["后端工程师"],
+          selfContent: "给你最完美的数据就是return True",
+          imgUrl:
+            "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/td.jpg",
+        },
+        {
+          name: "小七",
+          tags: ["前端工程师"],
+          selfContent: "是个前端，开发练习两年半只会v2，v3学习中",
+          imgUrl:
+            "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/xq.jpg",
+        },
+        {
+          name: "斯普努尔",
+          tags: ["前端工程师"],
+          selfContent: "春恨秋悲皆自惹，bugbug快走开",
+          imgUrl:
+            "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/qpne.jpg",
+        },
+        {
+          name: "SAO2233",
+          tags: ["前端工程师"],
+          selfContent: "react，vue",
+          imgUrl:
+            "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/SAO2233.jpg",
         },
       ],
     };
