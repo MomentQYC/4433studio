@@ -10,14 +10,35 @@
 -->
 <template>
   <div id="app">
-    <navView></navView>
-    <router-view></router-view>
+    <!-- PC端 -->
+    <div v-if="media[0] == 'Windows'">
+      <!-- 导航栏 -->
+      <navView />
+      <!-- 路由内容 -->
+      <router-view />
+    </div>
+
+    <!-- 移动端 -->
+    <div v-else>
+      <!-- 警告组件 -->
+      <warningView />
+    </div>
   </div>
 </template>
 <script>
+/*导航栏*/
 import navView from "@/components/navView/index.vue";
+/*警告组件*/
+import warningView from "@/components/user-warningView/index.vue";
 export default {
-  components: { navView },
+  components: { navView, warning },
+  data() {
+    /*获取设备类型*/
+    const media = navigator.userAgent.match(
+      /Android|iPhone|iPad|iPod|BlackBerry|Windows Phone|SymbianOS|Windows CE|IEMobile|Windows/i
+    );
+    return { media };
+  },
 };
 </script>
 
@@ -28,6 +49,7 @@ export default {
 }
 #app {
   overflow: hidden;
+  overflow-y: auto;
   width: 100%;
   height: 100vh;
   background: #000;

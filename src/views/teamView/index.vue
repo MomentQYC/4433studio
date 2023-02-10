@@ -91,6 +91,13 @@ export default {
           imgUrl:
             "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/yz.jpg",
         },
+        {
+          name: "墨卿",
+          tags: ["前端工程师"],
+          selfContent: "每次npm run 就像开奖,见红直接开摆",
+          imgUrl:
+            "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/mm.jpg",
+        },
       ],
     };
   },
