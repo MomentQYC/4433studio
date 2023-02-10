@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
- * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-02-09 16:13:32
+ * @LastEditors: Nico
+ * @LastEditTime: 2023-02-10 18:47:14
  * @FilePath: \4433studio\src\views\joinView\index.vue
  * @Description: 
  * 
@@ -14,119 +14,80 @@
       JOIN US
       <div class="inforTitle3">来和我们一起玩一种不被定义的开发</div>
     </div>
-    <!-- 左侧图片 -->
-    <div class="contentBox">
-      <!-- <img @dragstart.prevent src="@/assets/join.png" alt="" class="joinImg" /> -->
-      <div id="myChart" class="echarts" style="width: 740px; height: 740px" />
-    </div>
-    <!-- 表单 -->
-    <div class="joinInfo">
-      <el-divider>个人信息</el-divider>
-      <el-form
-        ref="formData"
-        :model="formData"
-        inline
-        label-width="140px"
-        label-position="left"
-        class="elFrom"
-      >
-        <el-form-item label="名称：" prop="address" style="margin-top: 20px">
-          <el-input
-            v-model="formData.joinName"
-            placeholder="请输入你的名称~"
-          ></el-input>
-        </el-form-item>
-        <el-form-item
-          label="联系方式："
-          prop="address"
-          style="margin-top: 20px"
-        >
-          <el-input
-            v-model="formData.joinName"
-            placeholder="请输入QQ号~"
-          ></el-input>
-        </el-form-item>
-        <el-form-item
-          label="擅长领域："
-          prop="address"
-          style="margin-top: 20px"
-        >
-          <el-input
-            v-model="formData.joinName"
-            placeholder="请输入擅长领域~"
-          ></el-input>
-        </el-form-item>
-        <el-form-item
-          label="个人优秀作品上传"
-          prop="address"
-          style="margin-top: 20px"
-        >
-          <el-upload
-            class="upload-demo"
-            drag
-            action="https://jsonplaceholder.typicode.com/posts/"
-            multiple
-          >
-            <i class="el-icon-upload" style="color: #fff"></i>
-            <div class="el-upload__text" style="color: #fff">
-              将文件拖到此处，或<em>点击上传</em>
-            </div>
-            <div class="el-upload__tip" slot="tip" style="color: #fff">
-              * 只能上传zip文件，且不超过500kb *
-            </div>
-            <div class="el-upload__tip" slot="tip" style="color: #fff">
-              *
-              个人作品上传仅用作考核，本工作室不会以任何形式保存、公开、使用上传的个人作品，并将定期清空缓存
-              *
-            </div>
-          </el-upload>
-        </el-form-item>
-        <el-form-item style="position:relative; width: 100%; margin-left: 80px; margin-top: 10px">
-          <el-button id="Bn" class="submit" @mouseover.native="notRun && run($event)" @click="SendEail" style="position:absolute; left:-100px; top:0px;">{{isRun?'很急，欸~':'立即提交'}}</el-button>
-          <el-button  class="reset">重置</el-button>
-        </el-form-item>
-      </el-form>
+    <div class="content-warp">
+      <!-- 左侧图片 -->
+      <div class="contentBox">
+        <!-- <img @dragstart.prevent src="@/assets/join.png" alt="" class="joinImg" /> -->
+        <div id="myChart" class="echarts" />
+      </div>
+      <!-- 表单 -->
+      <div class="joinInfo">
+        <el-form ref="formData" :model="formData" inline label-width="140px" label-position="top" class="elFrom">
+          <el-form-item label="姓名：" prop="address" style="margin-top: 20px">
+            <el-input v-model="formData.joinName" placeholder="请输入你的名称~"></el-input>
+          </el-form-item>
+          <el-form-item label="联系方式：" prop="address" style="margin-top: 20px">
+            <el-input v-model="formData.joinName" placeholder="请输入QQ号~"></el-input>
+          </el-form-item>
+          <el-form-item label="擅长领域：" prop="address" style="margin-top: 20px">
+            <el-input v-model="formData.joinName" placeholder="请输入擅长领域~"></el-input>
+          </el-form-item>
+          <el-form-item label="个人优秀作品上传" prop="address" style="margin-top: 20px">
+            <el-upload class="upload-demo" drag action="https://jsonplaceholder.typicode.com/posts/" multiple>
+              <i class="el-icon-upload" style="color: #fff"></i>
+              <div class="el-upload__text" style="color: #fff">将文件拖到此处，或<em>点击上传</em></div>
+              <div class="el-upload__tip" slot="tip" style="color: #fff">* 只能上传zip文件，且不超过500kb *</div>
+              <div class="el-upload__tip" slot="tip" style="color: #fff">
+                * 个人作品上传仅用作考核，本工作室不会以任何形式保存、公开、使用上传的个人作品，并将定期清空缓存 *
+              </div>
+            </el-upload>
+          </el-form-item>
+          <el-form-item style="position: relative; width: 100%; margin-left: 100px; margin-top: 10px">
+            <el-button id="Bn" class="submit" @mouseover.native="notRun && run($event)" style="position: absolute; left: -100px; top: 0px">{{
+              isRun ? '很急，欸~' : '立即提交'
+            }}</el-button>
+            <el-button class="reset">重置</el-button>
+          </el-form-item>
+        </el-form>
+      </div>
     </div>
   </div>
 </template>
-  
-  <script>
 
-import "echarts-wordcloud/dist/echarts-wordcloud";
-import "echarts-wordcloud/dist/echarts-wordcloud.min";
+<script>
+import 'echarts-wordcloud/dist/echarts-wordcloud'
+import 'echarts-wordcloud/dist/echarts-wordcloud.min'
 export default {
   mounted() {
-    this.getEcharts();
+    this.getEcharts()
   },
   data() {
     return {
-      notRun:true,
+      notRun: true,
       flag: 1,
-      isRun:false,
+      isRun: false,
       formData: {
-        joinName: "",
-      },
-    };
+        joinName: ''
+      }
+    }
   },
 
   methods: {
     run(e) {
       this.isRun = true
-      var Bn = document.getElementById("Bn");
-      var aWidth =
-        document.body.clientWidth || document.documentElement.clientWidth;
-      var aHeight =
-        document.body.clientHeight || document.documentElement.clientHeight;
-      var sJs1 = Math.floor(Math.random() * aHeight);
-      var sJs2 = Math.floor(Math.random() * aWidth);
-      if(this.flag === 10) {
+      var Bn = document.getElementById('Bn')
+      var aWidth = document.body.clientWidth || document.documentElement.clientWidth
+      var aHeight = document.body.clientHeight || document.documentElement.clientHeight
+      var sJs1 = Math.floor(Math.random() * aHeight)
+      var sJs2 = Math.floor(Math.random() * aWidth)
+      if (this.flag === 10) {
         this.$message.success('开个玩笑 ο(=•ω＜=)ρ⌒☆ 不逗你啦~')
         this.isRun = false
         this.notRun = false
       } else {
-        Bn.style.top = -sJs1/2 + "px";
-        Bn.style.left = -sJs2/2 + "px";
-        this.flag ++;
+        Bn.style.top = -sJs1 / 2 + 'px'
+        Bn.style.left = -sJs2 / 2 + 'px'
+        this.flag++
       }
     },
     /**
@@ -134,7 +95,7 @@ export default {
      * @return {*}
      */
     getEcharts() {
-      const myChart = this.$echarts.init(document.getElementById("myChart"));
+      const myChart = this.$echarts.init(document.getElementById('myChart'))
       var keywords = {
         改变世界: 221990,
         任重道远: 10288,
@@ -144,15 +105,15 @@ export default {
         无畏过错: 11206,
         不鸣则已: 14885,
         一鸣惊人: 32294,
-        "00后": 18574,
+        '00后': 18574,
         不被定义的开发: 38929,
         加入我们: 11969,
-        "网页就该平平无奇？": 37517,
+        '网页就该平平无奇？': 37517,
         我们是如此年轻: 12053,
-        "吃了吗您？": 57299,
-        "chaichai socute": 15418,
-        "just do it": 22905,
-        "拒绝996！": 5146,
+        '吃了吗您？': 57299,
+        'chaichai socute': 15418,
+        'just do it': 22905,
+        '拒绝996！': 5146,
         百梦蠢狗: 49487,
         天天抖手: 33837,
         精神抖擞: 4500,
@@ -162,7 +123,7 @@ export default {
         从提肛开始: 3706,
         我超酷的: 4812,
         嗨嗨嗨: 16578,
-        "为斯卡蒂献上心脏！": 24347,
+        '为斯卡蒂献上心脏！': 24347,
         我很想你: 43420,
         年轻且有病: 25222,
         geo: 16904,
@@ -176,11 +137,11 @@ export default {
         animationDelay: 2431,
         splitNumber: 5175,
         大爷来玩啊: 12738,
-        "4433工作室": 7133,
+        '4433工作室': 7133,
         axisTick: 8831,
-        "加班？给钱！": 17516,
+        '加班？给钱！': 17516,
         pointer: 590,
-        "你真不来？": 23426,
+        '你真不来？': 23426,
         柴柴: 38497,
         slider: 7236,
         灰灰: 66514,
@@ -225,22 +186,22 @@ export default {
         polarIndex: 1456,
         shadowOffsetX: 3046,
         shadowColor: 3771,
-        shadowOffsetY: 2475,
-      };
-      var data = [];
+        shadowOffsetY: 2475
+      }
+      var data = []
       for (var name in keywords) {
         data.push({
           name: name,
-          value: Math.sqrt(keywords[name]),
-        });
+          value: Math.sqrt(keywords[name])
+        })
       }
       // var maskImage = new Image();
       var option = {
-        backgroundColor: "#000",
+        backgroundColor: '#000',
         series: [
           {
-            name: "joinUs",
-            type: "wordCloud",
+            name: 'joinUs',
+            type: 'wordCloud',
             //size: ['9%', '99%'],
             sizeRange: [11, 80],
             //textRotation: [0, 45, 90, -45],
@@ -250,61 +211,65 @@ export default {
             textPadding: 0,
             autoSize: {
               enable: true,
-              minSize: 6,
+              minSize: 6
             },
             textStyle: {
               color: function () {
-                return "#fff";
+                return '#fff'
               },
               emphasis: {
                 shadowBlur: 10,
-                shadowColor: "#333",
-              },
+                shadowColor: '#333'
+              }
             },
-            data: data,
-          },
-        ],
-      };
+            data: data
+          }
+        ]
+      }
       // maskImage.onload = function() {
-      myChart.setOption(option);
+      myChart.setOption(option)
       // };
-    },
-  },
-};
+    }
+  }
+}
 </script>
-  
-  <style lang="scss">
+
+<style lang="scss">
 .joinBox {
-  display: flex;
-  flex-wrap: nowrap;
   .joinTitle {
     font-weight: 550;
     font-size: 30px;
     margin-left: 100px;
-    // margin-top: 30px;
+    margin-top: 30px;
+    width: 100%;
     .inforTitle3 {
       margin-top: 10px;
       font-size: 16px;
     }
   }
+  .content-warp {
+    display: flex;
+    padding: 80px 100px 0 100px;
+    justify-content: space-between;
+  }
   .contentBox {
     user-select: none;
     border: 2px solid #fff;
-    margin-top: 80px;
-    margin-left: -100px;
-    width: 740px;
-    height: 740px;
+    width: 3rem;
+    height: 3rem;
     .joinImg {
       width: 100%;
     }
+    .echarts {
+      width: 100%;
+      height: 100%;
+    }
   }
   .joinInfo {
-    width: 600px;
-    height: 820px;
-    margin-top: 80px;
-    margin-left: 170px;
+    width: 700px;
     .elFrom {
-      text-align: center;
+      text-align: left;
+      font-size: 14px;
     }
   }
   .submit {
@@ -342,13 +307,13 @@ export default {
 
 <style>
 .el-message--success {
-  background-color: rgb(0, 0, 0)!important;
-  border-color: #fff!important;
+  background-color: rgb(0, 0, 0) !important;
+  border-color: #fff !important;
 }
-.el-message__content{
-  color: #fff!important;
+.el-message__content {
+  color: #fff !important;
 }
 .el-message .el-icon-success {
-  color: #fff!important;
+  color: #fff !important;
 }
 </style>

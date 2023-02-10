@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-08 22:36:45
- * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-02-10 10:16:15
+ * @LastEditors: Nico
+ * @LastEditTime: 2023-02-10 18:23:25
  * @FilePath: \4433studio\src\components\navView\index.vue
  * @Description: 
  * 
@@ -26,10 +26,10 @@
         router
       >
         <el-menu-item index="/" class="mengceng">首页</el-menu-item>
-        <el-menu-item index="team">团队介绍</el-menu-item>
-        <el-menu-item index="3">作品展示</el-menu-item>
-        <el-menu-item index="join">加入我们</el-menu-item>
-        <el-menu-item index="contact">联系我们</el-menu-item>
+        <el-menu-item index="/team">团队介绍</el-menu-item>
+        <el-menu-item index="/3">作品展示</el-menu-item>
+        <el-menu-item index="/join">加入我们</el-menu-item>
+        <el-menu-item index="/contact">联系我们</el-menu-item>
       </el-menu>
       <!-- <el-button class="loginBtn" @click="userLogin(true)">登录</el-button> -->
       <!-- <el-button class="regiestBtn" @click="userRegiest(true)">注册</el-button> -->
@@ -45,16 +45,20 @@
 </template>
 
 <script>
-import loginView from "@/components/loginView/index.vue";
-import regiestView from "@/components/regiestView/index.vue";
+import loginView from '@/components/loginView/index.vue'
+import regiestView from '@/components/regiestView/index.vue'
 export default {
   components: { loginView, regiestView },
   data() {
     return {
-      activeIndex: "1",
+      activeIndex: '1',
       dialogFormVisibleL: false,
-      dialogFormVisibleR: false,
-    };
+      dialogFormVisibleR: false
+    }
+  },
+  created() {
+    this.activeIndex = this.$route.path
+    console.log(this.$route)
   },
   methods: {
     /**
@@ -64,9 +68,9 @@ export default {
      */
     userLogin(type) {
       if (type) {
-        this.dialogFormVisibleL = true;
+        this.dialogFormVisibleL = true
       } else {
-        this.dialogFormVisibleL = false;
+        this.dialogFormVisibleL = false
       }
     },
     /**
@@ -76,13 +80,13 @@ export default {
      */
     userRegiest(type) {
       if (type) {
-        this.dialogFormVisibleR = true;
+        this.dialogFormVisibleR = true
       } else {
-        this.dialogFormVisibleR = false;
+        this.dialogFormVisibleR = false
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style lang="scss">
