@@ -1,12 +1,21 @@
+<!--
+ * @Author: Chai chai 2787922490@qq.com
+ * @Date: 2023-02-10 09:08:17
+ * @LastEditors: Chai chai 2787922490@qq.com
+ * @LastEditTime: 2023-02-10 10:16:00
+ * @FilePath: \4433studio\src\components\user-warningView\index.vue
+ * 
+ * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
+-->
 <template>
   <div class="mobile">
     <div class="mobileTitle">😵移动端暂不支持</div>
     <div class="mobileContent">
       请使用电脑访问
       <p>
-        <a href="http://chaichaisocute.top" class="mobileHref"
+        <!-- <a href="http://chaichaisocute.top" class="mobileHref"
           >http://chaichaisocute.top</a
-        >
+        > -->
       </p>
     </div>
   </div>

@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-08 21:59:40
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-02-09 16:57:11
+ * @LastEditTime: 2023-02-10 10:15:50
  * @FilePath: \4433studio\src\App.vue
  * @Description: 
  * 
@@ -31,7 +31,7 @@ import navView from "@/components/navView/index.vue";
 /*警告组件*/
 import warningView from "@/components/user-warningView/index.vue";
 export default {
-  components: { navView, warning },
+  components: { navView, warningView },
   data() {
     /*获取设备类型*/
     const media = navigator.userAgent.match(

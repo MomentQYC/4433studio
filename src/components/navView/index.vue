@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-08 22:36:45
- * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
- * @LastEditTime: 2022-11-10 16:02:41
+ * @LastEditors: Chai chai 2787922490@qq.com
+ * @LastEditTime: 2023-02-10 10:16:15
  * @FilePath: \4433studio\src\components\navView\index.vue
  * @Description: 
  * 
@@ -31,16 +31,16 @@
         <el-menu-item index="join">加入我们</el-menu-item>
         <el-menu-item index="contact">联系我们</el-menu-item>
       </el-menu>
-      <el-button class="loginBtn" @click="userLogin(true)">登录</el-button>
-      <el-button class="regiestBtn" @click="userRegiest(true)">注册</el-button>
+      <!-- <el-button class="loginBtn" @click="userLogin(true)">登录</el-button> -->
+      <!-- <el-button class="regiestBtn" @click="userRegiest(true)">注册</el-button> -->
     </div>
     <!-- 登陆注册弹窗 -->
-    <el-dialog title="登录" :visible.sync="dialogFormVisibleL" width="500px">
+    <!-- <el-dialog title="登录" :visible.sync="dialogFormVisibleL" width="500px">
       <loginView ref="loginView" @userLogin="userLogin" />
     </el-dialog>
     <el-dialog title="注册" :visible.sync="dialogFormVisibleR" width="500px">
       <regiestView ref="regiestView" @userRegiest="userRegiest" />
-    </el-dialog>
+    </el-dialog> -->
   </nav>
 </template>
 

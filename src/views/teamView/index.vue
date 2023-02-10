@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
- * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
- * @LastEditTime: 2022-11-10 16:24:39
+ * @LastEditors: Chai chai 2787922490@qq.com
+ * @LastEditTime: 2023-02-10 10:15:40
  * @FilePath: \4433studio\src\views\teamView\index.vue
  * @Description: 
  * 
@@ -35,11 +35,19 @@ export default {
       teams: [
         {
           name: "柴柴",
-          tags: ["前端负责人", "前端工程师"],
+          tags: ["前端负责人", "前端工程师","工作室负责人"],
           selfContent:
             "vue二次元个人博客模板作者，热爱花里胡哨的开发，涉猎广泛，励志做一名优秀的、花里胡哨的程序员",
           imgUrl:
             "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/chaichai.jpg",
+        },
+        {
+          name: "张三同学",
+          tags: ["前端工程师","工作室副负责人"],
+          selfContent:
+            "爱搞事的闲散青年，兴趣广泛，善于行动，热爱生活，立志成为一名18线全栈攻城狮，我的城科微信小程序作者。",
+          imgUrl:
+            "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/zs.jpg",
         },
         {
           name: "旧颜",
@@ -68,14 +76,6 @@ export default {
           selfContent: "我也是蠢狗",
           imgUrl:
             "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/pp.jpg",
-        },
-        {
-          name: "张三同学",
-          tags: ["前端工程师"],
-          selfContent:
-            "爱搞事的闲散青年，兴趣广泛，善于行动，热爱生活，立志成为一名18线全栈攻城狮，我的城科微信小程序作者。",
-          imgUrl:
-            "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/zs.jpg",
         },
         {
           name: "渣男",
