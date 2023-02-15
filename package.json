@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "chaichai": "vue-cli-service serve",
-    "build-test": "vue-cli-service build && cross-env NODE_ENV=development node -r ./upload-ali-preload.js upload-ali.js",
+    "build:chai-test": "vue-cli-service build && cross-env NODE_ENV=development node -r ./upload-ali-preload.js upload-ali.js",
+    "build:chai": "vue-cli-service build && scp -r ./dist root@47.108.166.108:/home/docker/nginx/project",
     "build": "vue-cli-service build && cross-env NODE_ENV=production node -r ./upload-ali-preload.js upload-ali.js"
   },
   "dependencies": {
