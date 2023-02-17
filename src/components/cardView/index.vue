@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
  * @LastEditors: Nico
- * @LastEditTime: 2023-02-17 15:32:12
+ * @LastEditTime: 2023-02-17 15:42:57
  * @FilePath: \4433studio\src\components\cardView\index.vue
  * @Description: 
  * 
@@ -60,9 +60,9 @@ export default {
 .card-item {
   width: 100%;
   height: 320px;
-  padding: 5px;
+  padding: 0 8px;
   box-sizing: border-box;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   @media screen and (min-width: 480px) {
     width: 100%;
   }
@@ -77,10 +77,9 @@ export default {
   }
   .card-warp {
     width: 100%;
-    height: 300px;
+    height: 100%;
     overflow: hidden;
     background-color: #ccc;
-    // filter: grayscale(1);
     position: relative;
     box-sizing: border-box;
     border-radius: 5px;
