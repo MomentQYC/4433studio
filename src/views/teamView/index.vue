@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
  * @LastEditors: Nico
- * @LastEditTime: 2023-02-10 18:55:51
+ * @LastEditTime: 2023-02-17 15:31:36
  * @FilePath: \4433studio\src\views\teamView\index.vue
  * @Description: 
  * 
@@ -131,9 +131,8 @@ export default {
 .cardBox {
   width: 70vw;
   /* height: 80vh; */
-  flex-wrap: wrap;
   display: flex;
-  justify-content: space-between;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 </style>
