@@ -30,6 +30,9 @@
 import navView from "@/components/navView/index.vue";
 /*警告组件*/
 import warningView from "@/components/user-warningView/index.vue";
+/*控制台欢迎语*/
+import welcome from "@/utils/welcome_console";
+
 export default {
   components: { navView, warningView },
   data() {
@@ -40,6 +43,8 @@ export default {
     return { media };
   },
 };
+/*控制台欢迎语*/
+welcome.console();
 </script>
 
 <style lang="scss">
