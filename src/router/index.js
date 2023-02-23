@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-08 21:59:40
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2022-11-09 22:28:38
+ * @LastEditTime: 2023-02-23 16:24:30
  * @FilePath: \4433studio\src\router\index.js
  * @Description: 
  * 
@@ -30,6 +30,16 @@ const routes = [
     path: '/join',
     name: 'join',
     component: () => import('@/views/joinView/index.vue')
+  },
+  {
+    path: '/show',
+    name: 'show',
+    component: () => import('@/views/showView/index.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/loginView/index.vue')
   },
   {
     path: '/contact',

@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
- * @LastEditors: Nico
- * @LastEditTime: 2023-02-17 15:31:36
+ * @LastEditors: Chai chai 2787922490@qq.com
+ * @LastEditTime: 2023-02-23 14:35:18
  * @FilePath: \4433studio\src\views\teamView\index.vue
  * @Description: 
  * 
@@ -41,13 +41,19 @@ export default {
         },
         {
           name: '张三同学',
-          tags: ['前端工程师', '工作室副负责人'],
+          tags: ['前端工程师', '前端副负责人', '工作室副负责人'],
           selfContent: '爱搞事的闲散青年，兴趣广泛，善于行动，热爱生活，立志成为一名18线全栈攻城狮，我的城科微信小程序作者。',
           imgUrl: 'https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/zs.jpg'
         },
         {
-          name: '旧颜',
+          name: '土豆',
           tags: ['后端负责人', '后端工程师'],
+          selfContent: '给你最完美的数据就是return True',
+          imgUrl: 'https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/td.jpg'
+        },
+        {
+          name: '旧颜',
+          tags: ['后端副负责人', '后端工程师'],
           selfContent: '立志成为一个十八线后端程序员！',
           imgUrl: 'https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/jy.png'
         },
@@ -86,12 +92,6 @@ export default {
           tags: ['前端工程师'],
           selfContent: '每次npm run 就像开奖,见红直接开摆',
           imgUrl: 'https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/mm.jpg'
-        },
-        {
-          name: '土豆',
-          tags: ['后端工程师'],
-          selfContent: '给你最完美的数据就是return True',
-          imgUrl: 'https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/td.jpg'
         },
         {
           name: '小七',

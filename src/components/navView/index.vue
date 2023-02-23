@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-08 22:36:45
- * @LastEditors: Nico
- * @LastEditTime: 2023-02-10 18:23:25
+ * @LastEditors: Chai chai 2787922490@qq.com
+ * @LastEditTime: 2023-02-23 16:24:21
  * @FilePath: \4433studio\src\components\navView\index.vue
  * @Description: 
  * 
@@ -27,9 +27,10 @@
       >
         <el-menu-item index="/" class="mengceng">首页</el-menu-item>
         <el-menu-item index="/team">团队介绍</el-menu-item>
-        <el-menu-item index="/3">作品展示</el-menu-item>
+        <el-menu-item index="/show">关于我们</el-menu-item>
         <el-menu-item index="/join">加入我们</el-menu-item>
         <el-menu-item index="/contact">联系我们</el-menu-item>
+        <el-menu-item index="/login">登录/注册</el-menu-item>
       </el-menu>
       <!-- <el-button class="loginBtn" @click="userLogin(true)">登录</el-button> -->
       <!-- <el-button class="regiestBtn" @click="userRegiest(true)">注册</el-button> -->
@@ -45,19 +46,20 @@
 </template>
 
 <script>
-import loginView from '@/components/loginView/index.vue'
-import regiestView from '@/components/regiestView/index.vue'
+// import loginView from '@/components/loginView/index.vue'
+// import regiestView from '@/components/regiestView/index.vue'
 export default {
-  components: { loginView, regiestView },
+  // components: { loginView, regiestView },
   data() {
     return {
-      activeIndex: '1',
+      activeIndex: '/',
       dialogFormVisibleL: false,
       dialogFormVisibleR: false
     }
   },
   created() {
     this.activeIndex = this.$route.path
+    console.log(this.activeIndex);
   },
   methods: {
     /**
@@ -91,7 +93,7 @@ export default {
 <style lang="scss">
 .navBar {
   z-index: 9999;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0 70px;
