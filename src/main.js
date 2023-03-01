@@ -1,8 +1,8 @@
 /*
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-08 21:59:40
- * @LastEditors: Nico
- * @LastEditTime: 2023-02-10 16:57:10
+ * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
+ * @LastEditTime: 2023-02-23 17:23:20
  * @FilePath: \4433studio\src\main.js
  * @Description:
  *
@@ -14,11 +14,13 @@ import 'element-ui/lib/theme-chalk/index.css'
 import App from './App.vue'
 import router from './router'
 import * as echarts from 'echarts'
+import axios from 'axios'
 // import Email from './views/joinView/js/smtp.js'
 import '@/utils/adapter'
 import '@/style/common.css'
 
 Vue.prototype.$echarts = echarts
+Vue.prototype.$axios = axios
 
 Vue.use(ElementUI)
 // Vue.use(Email)
@@ -26,6 +28,7 @@ Vue.use(ElementUI)
 Vue.config.productionTip = false
 
 new Vue({
+  axios,
   router,
   render: (h) => h(App)
 }).$mount('#app')

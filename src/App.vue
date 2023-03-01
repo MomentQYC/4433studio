@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-08 21:59:40
- * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-02-10 10:15:50
+ * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
+ * @LastEditTime: 2023-02-28 14:17:29
  * @FilePath: \4433studio\src\App.vue
  * @Description: 
  * 
@@ -13,7 +13,9 @@
     <!-- PC端 -->
     <div v-if="media[0] == 'Windows'">
       <!-- 导航栏 -->
-      <navView />
+      <keep-alive>
+        <navView />
+      </keep-alive>
       <!-- 路由内容 -->
       <router-view />
     </div>
@@ -40,11 +42,17 @@ export default {
     const media = navigator.userAgent.match(
       /Android|iPhone|iPad|iPod|BlackBerry|Windows Phone|SymbianOS|Windows CE|IEMobile|Windows/i
     );
-    return { media };
+    return {
+      media,
+      getIp: "",
+    };
   },
+  /*控制台欢迎语*/
+  created() {
+    welcome.console();
+  },
+
 };
-/*控制台欢迎语*/
-welcome.console();
 </script>
 
 <style lang="scss">
