@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 22:29:24
- * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
- * @LastEditTime: 2022-11-10 08:53:10
+ * @LastEditors: Chai chai 2787922490@qq.com
+ * @LastEditTime: 2023-03-08 09:09:41
  * @FilePath: \4433studio\src\components\loginView\index.vue
  * @Description: 
  * 
@@ -32,7 +32,7 @@
         ></el-input>
       </el-form-item>
       <el-form-item style="width: 80%; text-align: right">
-        <el-button type="primary" size="medium">登录</el-button>
+        <el-button type="primary" size="medium" @click="goLogin">登录</el-button>
         <el-button @click="cancel" size="medium">取消</el-button>
       </el-form-item>
     </el-form>
@@ -50,6 +50,7 @@ export default {
     };
   },
   methods: {
+   
     /**
      * @description: 关闭弹窗
      * @return {*}
