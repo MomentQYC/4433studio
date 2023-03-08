@@ -1,15 +1,16 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
- * @LastEditors: Nico
- * @LastEditTime: 2023-02-10 18:47:14
+ * @LastEditors: Chai chai 2787922490@qq.com
+ * @LastEditTime: 2023-03-08 09:08:07
  * @FilePath: \4433studio\src\views\joinView\index.vue
  * @Description: 
  * 
  * Copyright (c) 2022 by Chai chai 2787922490@qq.com, All Rights Reserved. 
 -->
 <template>
-  <div class="joinBox">
+  <div>
+    <div class="joinBox">
     <div class="joinTitle">
       JOIN US
       <div class="inforTitle3">来和我们一起玩一种不被定义的开发</div>
@@ -23,6 +24,7 @@
       <!-- 表单 -->
       <div class="joinInfo">
         <el-form
+          :rules="rules"
           ref="formData"
           :model="formData"
           inline
@@ -30,7 +32,11 @@
           label-position="top"
           class="elFrom"
         >
-          <el-form-item label="姓名：" prop="address" style="margin-top: 20px">
+          <el-form-item
+            label="姓名："
+            prop="joinUserForName"
+            style="margin-top: 20px"
+          >
             <el-input
               v-model="formData.joinUserForName"
               placeholder="请输入你的名称~"
@@ -38,7 +44,7 @@
           </el-form-item>
           <el-form-item
             label="联系方式："
-            prop="address"
+            prop="joinUserForQQ"
             style="margin-top: 20px"
           >
             <el-input
@@ -48,7 +54,7 @@
           </el-form-item>
           <el-form-item
             label="擅长领域："
-            prop="address"
+            prop="joinUserForSkill"
             style="margin-top: 20px"
           >
             <el-input
@@ -56,27 +62,35 @@
               placeholder="请输入擅长领域~"
             ></el-input>
           </el-form-item>
+          <!-- action="http://chaichaisocute.top:8081/v1/file/upload" -->
+          <!-- action="https://jsonplaceholder.typicode.com/posts/" -->
           <el-form-item
-            label="个人优秀作品上传"
+            label="个人优秀作品截图集上传"
             prop="address"
             style="margin-top: 20px"
           >
             <el-upload
+            action="https://jsonplaceholder.typicode.com/posts/"
+              ref="conDocUpload"
               class="upload-demo"
               drag
-              action="https://jsonplaceholder.typicode.com/posts/"
-              multiple
+              name="files"
+              :data="{ is_private: 1 }"
+              :before-upload="uploadBefore"
+              :on-success="uploadSuccess"
+              :on-change="onChange"
+              :multiple="false"
             >
               <i class="el-icon-upload" style="color: #fff"></i>
               <div class="el-upload__text" style="color: #fff">
                 将文件拖到此处，或<em>点击上传</em>
               </div>
               <div class="el-upload__tip" slot="tip" style="color: #fff">
-                * 只能上传zip文件，且不超过500kb *
+                * 只能上传zip文件，且不超过20MB *
               </div>
               <div class="el-upload__tip" slot="tip" style="color: #fff">
                 *
-                个人作品上传仅用作考核，本工作室不会以任何形式保存、公开、使用上传的个人作品，并将定期清空缓存
+                个人作品上传仅用作考核，本工作室不会以任何形式保存、公开、使用上传的个人作品，并将定期清空存储库
                 *
               </div>
             </el-upload>
@@ -93,6 +107,7 @@
               id="Bn"
               class="submit"
               @mouseover.native="notRun && run($event)"
+              @click.native="readyToUp('formData')"
               style="position: absolute; left: -100px; top: 0px"
               >{{ isRun ? "很急，欸~" : "立即提交" }}</el-button
             >
@@ -102,6 +117,8 @@
       </div>
     </div>
   </div>
+  </div>
+
 </template>
 
 <script>
@@ -113,18 +130,154 @@ export default {
   },
   data() {
     return {
+      isTime:false,
+      currentdate:'',
       notRun: true,
       flag: 1,
       isRun: false,
+      haveFile: false,
       formData: {
         joinUserForName: "",
         joinUserForQQ: "",
         joinUserForSkill: "",
       },
+      rules: {
+        joinUserForName: [
+          { required: true, message: "请输入名称", trigger: "blur" },
+        ],
+        joinUserForQQ: [
+          { required: true, message: "请输入QQ", trigger: "blur" },
+          {
+            min: 6,
+            max: 10,
+            message: "长度一般在 6 到 10 位，请检查",
+            trigger: "blur",
+          },
+        ],
+        joinUserForSkill: [
+          { required: true, message: "请输入特长领域", trigger: "blur" },
+        ],
+      },
     };
   },
 
   methods: {
+    onChange(file, fileList) {
+      // const self = this
+      // const isLt2M = file.size / 1024 / 1024 < self.formatSize
+      // this.isSizeThan20 = file.size / 1024 / 1024 >= 20
+      // const docSuffix = file.name.substr(file.name.lastIndexOf('.'))
+      // if (!self.accept.includes(docSuffix)) {
+      //   // this.$message.error('请上传正确的文件')
+      //   self.fileList = []
+      //   return false
+      // }
+      // if (!isLt2M) {
+      //   // this.$message.error('上传文件大小不能超过' + self.size)
+      //   self.fileList = []
+      //   return false
+      // }
+      // self.fileList = fileList
+    },
+    getPublicIP() {
+      const slef = this
+      return new Promise((resolve, reject) => {
+        const URL = "https://api.ipify.org/?format=json";
+        try {
+          var httpRequest = new XMLHttpRequest();
+          httpRequest.open("GET", URL, true);
+          httpRequest.send();
+          httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+              var data = httpRequest.responseText;
+              const userIp = JSON.parse(data);
+              const currentdate = slef.getNowFormatDate()
+              // console.log(userIp);
+              // if (!localStorage.userIp) {
+              //   localStorage.setItem("userIp", userIp);
+              //   localStorage.setItem('uploadTime',currentdate)
+              // } else {
+              //   const ipInfo = localStorage.getItem('userIp')
+              //   if(ipInfo === userIp) {
+              //     slef.compareDate(currentdate,'2000-11-19')
+              //     console.log(slef.isTime);
+              //   }
+              // }
+            }
+          };
+        } catch (error) {
+          reject(err);
+        }
+      });
+    },
+    getNowFormatDate() {
+      var date = new Date();
+      var year = date.getFullYear();
+      var month = date.getMonth() + 1;
+      var strDate = date.getDate();
+      if (month >= 1 && month <= 9) {
+        month = "0" + month;
+      }
+      if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+      }
+      var currentdate = year + "-" + month + "-" + strDate;
+      return currentdate;
+    },
+
+    // 比较日期大小，可以直接进行比较
+    compareDate(date1, date2) {
+      var date1 = new Date(date1);
+      var date2 = new Date(date2);
+      // console.log(date1.getTime() - date2.getTime());
+      // if (date1.getTime() - date2.getTime()) {
+      //   this.isTime = true
+      // } else {
+      //   this.isTime = false
+      // }
+    },
+    readyToUp(formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          if (this.haveFile) {
+            alert("submit!");
+          } else {
+            this.$message.error("请上传你的个人作品 poi~");
+          }
+        } else {
+          this.$message.error("请检查表单填写情况~ poi~");
+          return false;
+        }
+      });
+    },
+    /**
+     * @description:文件上传成功
+     * @param {*} response
+     * @param {*} file
+     * @return {*}
+     */
+    uploadSuccess(response, file) {
+      // console.log(response);
+      if (response.success) {
+        this.$message.success("上传成功");
+        this.haveFile = true;
+      } else {
+        this.$refs.conDocUpload.clearFiles();
+        this.$message.error(response.message || "上传失败，请重新上传");
+      }
+    },
+    /**
+     * @description: 文件上传前
+     * @param {*} file
+     * @return {*}
+     */
+    uploadBefore(file) {
+      if (!file.name.includes(".zip")) {
+        this.$message.error("请上传正确的文件");
+        return false;
+      }
+      this.getPublicIP();
+    },
     run(e) {
       this.isRun = true;
       var Bn = document.getElementById("Bn");
@@ -296,40 +449,49 @@ export default {
     margin-left: 100px;
     margin-top: 30px;
     width: 100%;
+
     .inforTitle3 {
       margin-top: 10px;
       font-size: 16px;
     }
   }
+
   .content-warp {
     display: flex;
     padding: 80px 100px 0 100px;
     justify-content: space-between;
   }
+
   .contentBox {
     user-select: none;
     border: 2px solid #fff;
     width: 3rem;
     height: 3rem;
+
     .joinImg {
       width: 100%;
     }
+
     .echarts {
       width: 100%;
       height: 100%;
     }
   }
+
   .joinInfo {
     width: 700px;
+
     .elFrom {
       text-align: left;
       font-size: 14px;
     }
   }
+
   .submit {
     color: #fff;
     background: rgba($color: #000000, $alpha: 0.1);
   }
+
   .reset {
     color: #fff;
     background: rgba($color: #000000, $alpha: 0.1);
@@ -341,11 +503,13 @@ export default {
   background-color: rgb(0, 0, 0, 0.6);
   color: #fff;
 }
+
 .el-form-item__label {
   font-size: 16px;
   font-weight: 550;
   color: #fff;
 }
+
 .el-divider__text {
   position: absolute;
   background-color: #000;
@@ -354,20 +518,8 @@ export default {
   color: #fff;
   font-size: 14px;
 }
+
 .el-upload-dragger {
   background: #000;
-}
-</style>
-
-<style>
-.el-message--success {
-  background-color: rgb(0, 0, 0) !important;
-  border-color: #fff !important;
-}
-.el-message__content {
-  color: #fff !important;
-}
-.el-message .el-icon-success {
-  color: #fff !important;
 }
 </style>
