@@ -2,12 +2,40 @@
   width: 6px;
   height: 6px;
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: #131313;
   outline: none;
   border-radius: 5px;
 }
+
 ::-webkit-scrollbar-track {
   box-shadow: none;
   border-radius: 2px;
+}
+
+.el-message--success {
+  background-color: rgb(0, 0, 0) !important;
+  border-color: #fff !important;
+}
+
+.el-message__content {
+  color: #fff !important;
+}
+
+.el-message .el-icon-success {
+  color: #fff !important;
+}
+
+.el-message--error {
+  background-color: rgb(0, 0, 0) !important;
+  border-color: #fff !important;
+}
+
+.el-message__content {
+  color: #fff !important;
+}
+
+.el-message .el-icon-error {
+  color: #fff !important;
 }
