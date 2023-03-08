@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-08 22:36:45
  * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-02-23 16:24:21
+ * @LastEditTime: 2023-03-08 09:09:31
  * @FilePath: \4433studio\src\components\navView\index.vue
  * @Description: 
  * 
@@ -17,6 +17,8 @@
     <!-- 导航 -->
     <div class="navs">
       <el-menu
+      ref="menu"
+        @select="keep"
         :default-active="activeIndex"
         class="el-menu-demo"
         mode="horizontal"
@@ -57,11 +59,19 @@ export default {
       dialogFormVisibleR: false
     }
   },
-  created() {
-    this.activeIndex = this.$route.path
-    console.log(this.activeIndex);
-  },
+  created(){
+      if(sessionStorage.getItem('navkeep')){
+        this.activeIndex=sessionStorage.getItem('navkeep');
+      }
+    },
   methods: {
+    /**
+     * @description: keep navItem alive
+     * @return {*}
+     */
+    keep(){
+        sessionStorage.setItem('navkeep',this.$refs.menu.activeIndex);
+      },
     /**
      * @description: 用户登录弹窗显示隐藏
      * @param {*} type
