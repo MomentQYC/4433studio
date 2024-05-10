@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-08 21:59:40
- * @LastEditors: fengyuanyao fengyuanyao@fanyu.com
- * @LastEditTime: 2023-02-28 14:17:29
+ * @LastEditors: chaichai 2787922490@qq.com
+ * @LastEditTime: 2024-05-10 09:58:36
  * @FilePath: \4433studio\src\App.vue
  * @Description: 
  * 
@@ -10,20 +10,20 @@
 -->
 <template>
   <div id="app">
+    <!-- 移动端 -->
+    <div v-if="media[0] == 'Android' || media[0] == 'iPhone'">
+      <!-- 警告组件 -->
+      <warningView />
+    </div>
+
     <!-- PC端 -->
-    <div v-if="media[0] == 'Windows'">
+    <div v-else>
       <!-- 导航栏 -->
       <keep-alive>
         <navView />
       </keep-alive>
       <!-- 路由内容 -->
       <router-view />
-    </div>
-
-    <!-- 移动端 -->
-    <div v-else>
-      <!-- 警告组件 -->
-      <warningView />
     </div>
   </div>
 </template>
@@ -51,7 +51,6 @@ export default {
   created() {
     welcome.console();
   },
-
 };
 </script>
 

@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
- * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-02-23 14:35:18
+ * @LastEditors: chaichai 2787922490@qq.com
+ * @LastEditTime: 2024-05-10 14:39:47
  * @FilePath: \4433studio\src\views\teamView\index.vue
  * @Description: 
  * 
@@ -12,6 +12,7 @@
 <template>
   <div class="bB">
     <div class="teamTitle">TEAM OF US</div>
+    <div class="teamBuff">(展示顺序不分先后)</div>
     <!-- 卡片 -->
     <div class="cardBox">
       <cardView
@@ -35,7 +36,7 @@ export default {
       teams: [
         {
           name: "柴柴",
-          tags: ["前端负责人", "前端工程师", "工作室负责人"],
+          tags: ["前端工程师", "前端负责人", "工作室负责人"],
           selfContent:
             "vue二次元个人博客模板作者，热爱花里胡哨的开发，涉猎广泛，励志做一名优秀的、花里胡哨的程序员",
           imgUrl:
@@ -65,39 +66,96 @@ export default {
         },
         {
           name: "百梦",
-          tags: ["首席架构师"],
+          tags: ["首席架构师", "BOT开发工程师"],
           selfContent: "我是蠢狗",
           imgUrl:
             "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/bm.jpg",
         },
         {
-          name: "鲨鲨",
-          tags: ["后端工程师"],
-          selfContent: "无所谓，我会出手",
-          imgUrl:
-            "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/ss.jpg",
-        },
-        {
           name: "屁屁",
-          tags: ["UI设计师"],
+          tags: ["UI设计师", "产品经理"],
           selfContent: "我也是蠢狗",
           imgUrl:
             "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/pp.jpg",
         },
         {
-          name: "渣男",
-          tags: ["后端工程师"],
-          selfContent: "我真的想让这个世界变得更好，但是他们不给我源代码……",
+          name: "子兮",
+          tags: ["运维工程师", "工作室WAF", "BOT开发工程师"],
+          selfContent: "Goodbye World",
           imgUrl:
-            "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/zn.png",
+            "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/zixi.JPG",
         },
         {
-          name: "轩轩",
-          tags: ["后端工程师"],
-          selfContent: "代码乱得只有自己能看懂，公司不可替代的重要人才",
+          name: "七七",
+          tags: ["运维工程师", "天之都开发组"],
+          selfContent:
+            "我总是会试图提前预测一切的事情。我的人生是一条只能向前推进的窄路，我的头顶有开刃的刀，身后是吃人的鬼，眼前是驱不开的雾，脚下是开裂的冰",
           imgUrl:
-            "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/yz.jpg",
+            "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/qiqi.jpg",
         },
+        {
+          name: "渡渡",
+          tags: ["首席UI设计师"],
+          selfContent: "在梭哈了！！！",
+          imgUrl:
+            "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/dd.jpg",
+        },
+        {
+          name: "绾柔",
+          tags: ["UI设计师", "工作室吉祥物", "天之都开发组", "工作室讲师"],
+          selfContent: "巴拉巴拉巴拉",
+          imgUrl:
+            "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/wanrou.jpg",
+        },
+        {
+          name: "小柴",
+          tags: ["运营", "客服"],
+          selfContent: "要让世间受苦受穷的人不再贫困",
+          imgUrl:
+            "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/qingting.jpg",
+        },
+        {
+          name: "莫熊",
+          tags: ["后端工程师", "天之都开发组"],
+          selfContent: "看不到未来其实是看到了未来。",
+          imgUrl:
+            "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/moxiong.jpg",
+        },
+        {
+          name: "离",
+          tags: ["前端工程师", "chai-UI开发组"],
+          selfContent: "（资深）摸鱼前端工程师，好好干 狠狠摸！",
+          imgUrl:
+            "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/li.jpg",
+        },
+        {
+          name: "开摆",
+          tags: ["前端工程师", "chai-UI开发组"],
+          selfContent: "处于摆烂和学习的量子叠加态",
+          imgUrl:
+            "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/bai.jpg",
+        },
+        {
+          name: "斯普努尔",
+          tags: ["前端工程师"],
+          selfContent: "春恨秋悲皆自惹，bugbug快走开",
+          imgUrl:
+            "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/qpne.jpg",
+        },
+        // {
+        //   name: "渣男",
+        //   tags: ["后端工程师"],
+        //   selfContent: "我真的想让这个世界变得更好，但是他们不给我源代码……",
+        //   imgUrl:
+        //     "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/zn.png",
+        // },
+        // {
+        //   name: "轩轩",
+        //   tags: ["后端工程师"],
+        //   selfContent: "代码乱得只有自己能看懂，公司不可替代的重要人才",
+        //   imgUrl:
+        //     "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/yz.jpg",
+        // },
         {
           name: "墨卿",
           tags: ["前端工程师"],
@@ -113,13 +171,6 @@ export default {
             "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/xq.jpg",
         },
         {
-          name: "斯普努尔",
-          tags: ["前端工程师"],
-          selfContent: "春恨秋悲皆自惹，bugbug快走开",
-          imgUrl:
-            "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/qpne.jpg",
-        },
-        {
           name: "SAO2233",
           tags: ["前端工程师"],
           selfContent: "react，vue",
@@ -127,11 +178,11 @@ export default {
             "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/SAO2233.jpg",
         },
         {
-          name: "渡渡",
-          tags: ["UI设计师"],
-          selfContent: "在梭哈了！！！",
+          name: "鲨鲨",
+          tags: ["后端工程师"],
+          selfContent: "无所谓，我会出手",
           imgUrl:
-            "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/dd.jpg",
+            "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/ss.jpg",
         },
       ],
     };
@@ -147,7 +198,6 @@ export default {
   font-weight: 550;
   font-size: 30px;
   margin-top: 50px;
-  margin-bottom: 60px;
   text-align: center;
 }
 .cardBox {
@@ -156,5 +206,10 @@ export default {
   display: flex;
   margin: 0 auto;
   flex-wrap: wrap;
+}
+.teamBuff {
+  font-size: 14px;
+  margin-bottom: 60px;
+  text-align: center;
 }
 </style>

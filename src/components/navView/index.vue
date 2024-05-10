@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-08 22:36:45
- * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-03-08 09:09:31
+ * @LastEditors: chaichai 2787922490@qq.com
+ * @LastEditTime: 2024-05-10 11:09:17
  * @FilePath: \4433studio\src\components\navView\index.vue
  * @Description: 
  * 
@@ -17,7 +17,7 @@
     <!-- 导航 -->
     <div class="navs">
       <el-menu
-      ref="menu"
+        ref="menu"
         @select="keep"
         :default-active="activeIndex"
         class="el-menu-demo"
@@ -32,7 +32,7 @@
         <el-menu-item index="/show">关于我们</el-menu-item>
         <el-menu-item index="/join">加入我们</el-menu-item>
         <el-menu-item index="/contact">联系我们</el-menu-item>
-        <el-menu-item index="/login">登录/注册</el-menu-item>
+        <!-- <el-menu-item index="/login">登录/注册</el-menu-item> -->
       </el-menu>
       <!-- <el-button class="loginBtn" @click="userLogin(true)">登录</el-button> -->
       <!-- <el-button class="regiestBtn" @click="userRegiest(true)">注册</el-button> -->
@@ -54,24 +54,24 @@ export default {
   // components: { loginView, regiestView },
   data() {
     return {
-      activeIndex: '/',
+      activeIndex: "/",
       dialogFormVisibleL: false,
-      dialogFormVisibleR: false
+      dialogFormVisibleR: false,
+    };
+  },
+  created() {
+    if (sessionStorage.getItem("navkeep")) {
+      this.activeIndex = sessionStorage.getItem("navkeep");
     }
   },
-  created(){
-      if(sessionStorage.getItem('navkeep')){
-        this.activeIndex=sessionStorage.getItem('navkeep');
-      }
-    },
   methods: {
     /**
      * @description: keep navItem alive
      * @return {*}
      */
-    keep(){
-        sessionStorage.setItem('navkeep',this.$refs.menu.activeIndex);
-      },
+    keep() {
+      sessionStorage.setItem("navkeep", this.$refs.menu.activeIndex);
+    },
     /**
      * @description: 用户登录弹窗显示隐藏
      * @param {*} type
@@ -79,9 +79,9 @@ export default {
      */
     userLogin(type) {
       if (type) {
-        this.dialogFormVisibleL = true
+        this.dialogFormVisibleL = true;
       } else {
-        this.dialogFormVisibleL = false
+        this.dialogFormVisibleL = false;
       }
     },
     /**
@@ -91,13 +91,13 @@ export default {
      */
     userRegiest(type) {
       if (type) {
-        this.dialogFormVisibleR = true
+        this.dialogFormVisibleR = true;
       } else {
-        this.dialogFormVisibleR = false
+        this.dialogFormVisibleR = false;
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss">
