@@ -11,7 +11,7 @@
 <template>
   <div id="app">
     <!-- 移动端 -->
-    <div v-if="media[0] == 'Android' || media[0] == 'iPhone'">
+    <div v-if="media && media.length && (media[0] === 'Android' || media[0] === 'iPhone')">
       <!-- 警告组件 -->
       <warningView />
     </div>
