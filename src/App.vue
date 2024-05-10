@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-08 21:59:40
  * @LastEditors: chaichai 2787922490@qq.com
- * @LastEditTime: 2024-05-10 09:58:36
+ * @LastEditTime: 2024-05-10 15:21:28
  * @FilePath: \4433studio\src\App.vue
  * @Description: 
  * 
@@ -24,6 +24,7 @@
       </keep-alive>
       <!-- 路由内容 -->
       <router-view />
+      <footerView />
     </div>
   </div>
 </template>
@@ -34,9 +35,10 @@ import navView from "@/components/navView/index.vue";
 import warningView from "@/components/user-warningView/index.vue";
 /*控制台欢迎语*/
 import welcome from "@/utils/welcome_console";
+import footerView from "@/components/footerView/index.vue";
 
 export default {
-  components: { navView, warningView },
+  components: { navView, warningView, footerView },
   data() {
     /*获取设备类型*/
     const media = navigator.userAgent.match(

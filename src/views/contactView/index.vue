@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
  * @LastEditors: chaichai 2787922490@qq.com
- * @LastEditTime: 2024-05-10 14:33:49
+ * @LastEditTime: 2024-05-10 15:05:16
  * @FilePath: \4433studio\src\views\contactView\index.vue
  * @Description: 
  * 
@@ -103,7 +103,9 @@
           <p style="font-size: 40px; font-weight: 550; letter-spacing: 3px">
             鲨鲨
           </p>
-          <p>2787922490（QQ）：业务、商务合作联系</p>
+          <p>主攻方向：java相关</p>
+          <p>特长定位：系统开发、项目开发，学生毕设</p>
+          <p>业务、商务合作联系：2516981043（QQ）</p>
         </div></el-tab-pane
       >
       <el-tab-pane label="屁屁">

@@ -25,6 +25,7 @@
 
 .el-message .el-icon-success {
   color: #fff !important;
+  font-size: 30px;
 }
 
 .el-message--error {

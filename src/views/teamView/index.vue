@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
  * @LastEditors: chaichai 2787922490@qq.com
- * @LastEditTime: 2024-05-10 14:39:47
+ * @LastEditTime: 2024-05-10 15:18:19
  * @FilePath: \4433studio\src\views\teamView\index.vue
  * @Description: 
  * 
@@ -193,6 +193,7 @@ export default {
 <style>
 .bB {
   overflow: hidden;
+  margin-bottom: 100px;
 }
 .teamTitle {
   font-weight: 550;

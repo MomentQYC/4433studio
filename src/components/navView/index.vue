@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-08 22:36:45
  * @LastEditors: chaichai 2787922490@qq.com
- * @LastEditTime: 2024-05-10 11:09:17
+ * @LastEditTime: 2024-05-10 16:56:14
  * @FilePath: \4433studio\src\components\navView\index.vue
  * @Description: 
  * 
@@ -12,7 +12,8 @@
   <nav class="navBar">
     <!-- logo -->
     <div class="logoBox">
-      <img src="@/assets/4433white.png" alt="4433工作室logo" class="logo" />
+      <img src="@/assets/gzs.jpg" alt="4433工作室logo" class="logo" />
+      <div class="logoText" @click="$router.push('/')">4433Studio</div>
     </div>
     <!-- 导航 -->
     <div class="navs">
@@ -106,15 +107,31 @@ export default {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 70px;
   box-sizing: border-box;
   height: 100px;
   .logoBox {
-    width: 250px;
+    width: 65px;
+    height: 65px;
     display: flex;
     align-items: center;
+
+    .logoText {
+      font-size: 24px;
+      white-space: nowrap;
+      letter-spacing: 2px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 20px;
+    }
+    .img-box {
+      overflow: hidden;
+    }
     .logo {
-      width: 250px;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
     }
   }
 

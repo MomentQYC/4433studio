@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
- * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-03-08 09:08:07
+ * @LastEditors: chaichai 2787922490@qq.com
+ * @LastEditTime: 2024-05-10 16:52:35
  * @FilePath: \4433studio\src\views\joinView\index.vue
  * @Description: 
  * 
@@ -11,114 +11,128 @@
 <template>
   <div>
     <div class="joinBox">
-    <div class="joinTitle">
-      JOIN US
-      <div class="inforTitle3">来和我们一起玩一种不被定义的开发</div>
-    </div>
-    <div class="content-warp">
-      <!-- 左侧图片 -->
-      <div class="contentBox">
-        <!-- <img @dragstart.prevent src="@/assets/join.png" alt="" class="joinImg" /> -->
-        <div id="myChart" class="echarts" />
+      <div class="joinTitle">
+        JOIN US
+        <div class="inforTitle3">来和我们一起玩一种不被定义的开发</div>
       </div>
-      <!-- 表单 -->
-      <div class="joinInfo">
-        <el-form
-          :rules="rules"
-          ref="formData"
-          :model="formData"
-          inline
-          label-width="140px"
-          label-position="top"
-          class="elFrom"
-        >
-          <el-form-item
-            label="姓名："
-            prop="joinUserForName"
-            style="margin-top: 20px"
+      <div class="content-warp">
+        <!-- 左侧图片 -->
+        <div class="contentBox">
+          <!-- <img @dragstart.prevent src="@/assets/join.png" alt="" class="joinImg" /> -->
+          <div id="myChart" class="echarts" />
+        </div>
+        <!-- 表单 -->
+        <div class="joinInfo">
+          <el-form
+            :rules="rules"
+            ref="formData"
+            :model="formData"
+            inline
+            label-width="140px"
+            label-position="top"
+            class="elFrom"
           >
-            <el-input
-              v-model="formData.joinUserForName"
-              placeholder="请输入你的名称~"
-            ></el-input>
-          </el-form-item>
-          <el-form-item
-            label="联系方式："
-            prop="joinUserForQQ"
-            style="margin-top: 20px"
-          >
-            <el-input
-              v-model="formData.joinUserForQQ"
-              placeholder="请输入你的QQ~"
-            ></el-input>
-          </el-form-item>
-          <el-form-item
-            label="擅长领域："
-            prop="joinUserForSkill"
-            style="margin-top: 20px"
-          >
-            <el-input
-              v-model="formData.joinUserForSkill"
-              placeholder="请输入擅长领域~"
-            ></el-input>
-          </el-form-item>
-          <!-- action="http://chaichaisocute.top:8081/v1/file/upload" -->
-          <!-- action="https://jsonplaceholder.typicode.com/posts/" -->
-          <el-form-item
-            label="个人优秀作品截图集上传"
-            prop="address"
-            style="margin-top: 20px"
-          >
-            <el-upload
-            action="https://jsonplaceholder.typicode.com/posts/"
-              ref="conDocUpload"
-              class="upload-demo"
-              drag
-              name="files"
-              :data="{ is_private: 1 }"
-              :before-upload="uploadBefore"
-              :on-success="uploadSuccess"
-              :on-change="onChange"
-              :multiple="false"
+            <el-form-item
+              label="姓名："
+              prop="joinUserForName"
+              style="margin-top: 20px"
             >
-              <i class="el-icon-upload" style="color: #fff"></i>
-              <div class="el-upload__text" style="color: #fff">
-                将文件拖到此处，或<em>点击上传</em>
-              </div>
-              <div class="el-upload__tip" slot="tip" style="color: #fff">
-                * 只能上传zip文件，且不超过20MB *
-              </div>
-              <div class="el-upload__tip" slot="tip" style="color: #fff">
-                *
-                个人作品上传仅用作考核，本工作室不会以任何形式保存、公开、使用上传的个人作品，并将定期清空存储库
-                *
-              </div>
-            </el-upload>
-          </el-form-item>
-          <el-form-item
-            style="
-              position: relative;
-              width: 100%;
-              margin-left: 100px;
-              margin-top: 10px;
-            "
-          >
-            <el-button
-              id="Bn"
-              class="submit"
-              @mouseover.native="notRun && run($event)"
-              @click.native="readyToUp('formData')"
-              style="position: absolute; left: -100px; top: 0px"
-              >{{ isRun ? "很急，欸~" : "立即提交" }}</el-button
+              <el-input
+                v-model="formData.joinUserForName"
+                placeholder="请输入你的名称~"
+              ></el-input>
+            </el-form-item>
+            <el-form-item
+              label="联系方式："
+              prop="joinUserForQQ"
+              style="margin-top: 20px"
             >
-            <el-button class="reset">重置</el-button>
-          </el-form-item>
-        </el-form>
+              <el-input
+                v-model="formData.joinUserForQQ"
+                placeholder="请输入你的QQ~"
+              ></el-input>
+            </el-form-item>
+            <el-form-item
+              label="擅长领域："
+              prop="joinUserForSkill"
+              style="margin-top: 20px"
+            >
+              <el-input
+                v-model="formData.joinUserForSkill"
+                placeholder="请输入擅长领域~"
+              ></el-input>
+            </el-form-item>
+            <!-- action="http://chaichaisocute.top:8081/v1/file/upload" -->
+            <!-- action="https://jsonplaceholder.typicode.com/posts/" -->
+            <el-form-item
+              label="个人优秀作品截图集上传"
+              prop="address"
+              style="margin-top: 20px"
+            >
+              <el-upload
+                action="https://jsonplaceholder.typicode.com/posts/"
+                ref="conDocUpload"
+                class="upload-demo"
+                drag
+                name="files"
+                :data="{ is_private: 1 }"
+                :before-upload="uploadBefore"
+                :on-success="uploadSuccess"
+                :on-change="onChange"
+                :multiple="false"
+              >
+                <i class="el-icon-upload" style="color: #fff"></i>
+                <div class="el-upload__text" style="color: #fff">
+                  将文件拖到此处，或<em>点击上传</em>
+                </div>
+                <div class="el-upload__tip" slot="tip" style="color: #fff">
+                  * 只能上传zip文件，且不超过20MB *
+                </div>
+                <div class="el-upload__tip" slot="tip" style="color: #fff">
+                  *
+                  个人作品上传仅用作考核，本工作室不会以任何形式保存、公开、使用上传的个人作品，并将定期清空存储库
+                  *
+                </div>
+              </el-upload>
+            </el-form-item>
+            <el-form-item
+              style="
+                position: relative;
+                width: 100%;
+                margin-left: 100px;
+                margin-top: 10px;
+              "
+            >
+              <el-button
+                id="Bn"
+                class="submit"
+                @mouseover.native="notRun && run($event)"
+                @click.native="readyToUp('formData')"
+                style="position: absolute; left: -100px; top: 0px"
+                >{{ isRun ? "很急，欸~" : "立即提交" }}</el-button
+              >
+              <el-button class="reset">重置</el-button>
+            </el-form-item>
+          </el-form>
+          <div class="real-Form" style="display: none">
+            <div class="join-text1">想加入我们？那就来吧！</div>
+            <div class="join-text">
+              <span style="font-weight: 550; font-size: 28px">你 </span>和
+              <span style="font-weight: 550; font-size: 28px">未来</span>
+              一样，值得我们期待
+            </div>
+            <iframe
+              src="https://chat.cqucc4433.top"
+              width="800px"
+              height="90%"
+              frameborder="0"
+              allow="camera;microphone"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  </div>
-
 </template>
 
 <script>
@@ -130,8 +144,8 @@ export default {
   },
   data() {
     return {
-      isTime:false,
-      currentdate:'',
+      isTime: false,
+      currentdate: "",
       notRun: true,
       flag: 1,
       isRun: false,
@@ -180,7 +194,7 @@ export default {
       // self.fileList = fileList
     },
     getPublicIP() {
-      const slef = this
+      const slef = this;
       return new Promise((resolve, reject) => {
         const URL = "https://api.ipify.org/?format=json";
         try {
@@ -191,7 +205,7 @@ export default {
             if (httpRequest.readyState == 4 && httpRequest.status == 200) {
               var data = httpRequest.responseText;
               const userIp = JSON.parse(data);
-              const currentdate = slef.getNowFormatDate()
+              const currentdate = slef.getNowFormatDate();
               // console.log(userIp);
               // if (!localStorage.userIp) {
               //   localStorage.setItem("userIp", userIp);
@@ -285,10 +299,16 @@ export default {
         document.body.clientWidth || document.documentElement.clientWidth;
       var aHeight =
         document.body.clientHeight || document.documentElement.clientHeight;
+      var elForm = document.querySelector(".elFrom");
+
+      var realForm = document.querySelector(".real-Form");
+      console.log(elForm, "elForm");
       var sJs1 = Math.floor(Math.random() * aHeight);
       var sJs2 = Math.floor(Math.random() * aWidth);
-      if (this.flag === 10) {
-        this.$message.success("开个玩笑 ο(=•ω＜=)ρ⌒☆ 不逗你啦~");
+      if (this.flag === 1) {
+        this.$message.success("开个玩笑，我们才不填表单嘞 ο(=•ω＜=)ρ⌒☆ ");
+        elForm.style.display = "none";
+        realForm.style.display = "block";
         this.isRun = false;
         this.notRun = false;
       } else {
@@ -341,7 +361,7 @@ export default {
         heatmap: 3110,
         我们是: 20285,
         animationDuration: 3425,
-        animationDelay: 2431,
+        绾柔: 2431,
         splitNumber: 5175,
         大爷来玩啊: 12738,
         "4433工作室": 7133,
@@ -354,14 +374,14 @@ export default {
         灰灰: 66514,
         鲨鲨: 28516,
         smooth: 1295,
-        渣男: 12815,
+        子兮: 12815,
         saveAsImage: 2616,
         polar: 6279,
         我是布洛特亨德尔: 9419,
         show: 20620,
         text: 2592,
         icon: 2782,
-        dimension: 478,
+        莫熊: 478,
         inRange: 1060,
         提肛了吗: 89459,
         angleAxis: 5469,
@@ -379,7 +399,7 @@ export default {
         老年痴呆: 3292,
         opacity: 3097,
         屁屁: 6475,
-        轩轩: 2238,
+        七七: 2238,
         lines: 6403,
         墨卿: 2608,
         现在不嗨: 7477,
@@ -458,7 +478,7 @@ export default {
 
   .content-warp {
     display: flex;
-    padding: 80px 100px 0 100px;
+    padding: 80px 200px 0 200px;
     justify-content: space-between;
   }
 
@@ -479,8 +499,24 @@ export default {
   }
 
   .joinInfo {
-    width: 700px;
-
+    width: 50%;
+    margin-top: -40px;
+    .real-Form {
+      width: 100%;
+      height: 100%;
+      .join-text1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+        font-weight: 600;
+      }
+      .join-text {
+        font-size: 16px;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+        margin-left: 70px;
+      }
+    }
     .elFrom {
       text-align: left;
       font-size: 14px;

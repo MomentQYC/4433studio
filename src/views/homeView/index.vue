@@ -1,8 +1,8 @@
 <!--
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-08 22:02:00
- * @LastEditors: Chai chai 2787922490@qq.com
- * @LastEditTime: 2023-02-23 16:24:11
+ * @LastEditors: chaichai 2787922490@qq.com
+ * @LastEditTime: 2024-05-10 15:28:52
  * @FilePath: \4433studio\src\views\homeView\index.vue
  * @Description: 
  * 
@@ -12,9 +12,9 @@
   <div class="homeBg">
     <transition name="showwarp" appear>
       <div class="ContentBox">
-        <h1 class="title">4433工作室</h1>
+        <h1 class="title">欢迎来到 4433工作室</h1>
         <p class="content1">
-          <span>谁说</span>网页<span>就应该平平无奇？</span>
+          <span>谁说</span>青春<span>就应该平平无奇？</span>
         </p>
         <p class="content1">
           看看<span>00后</span>会有怎样的<span>奇思妙想</span>🤨
@@ -84,7 +84,7 @@ export default {
     }
 
     .content1 {
-      margin-top: 10px;
+      margin-top: 15px;
       font-size: 25px;
       letter-spacing: 1px;
       font-size: 0.13rem;
