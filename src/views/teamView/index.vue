@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
  * @LastEditors: chaichai 2787922490@qq.com
- * @LastEditTime: 2024-05-11 17:28:39
+ * @LastEditTime: 2024-05-11 17:40:20
  * @FilePath: \4433studio\src\views\teamView\index.vue
  * @Description: 
  * 
@@ -115,6 +115,13 @@ export default {
             "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/wanrou.jpg",
         },
         {
+          name: "十四",
+          tags: ["工作室管家"],
+          selfContent: "工作室管家（185，八块腹肌，美男子）",
+          imgUrl:
+            "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/xt.jpg",
+        },
+        {
           name: "小柴",
           tags: ["运营", "客服"],
           selfContent: "要让世间受苦受穷的人不再贫困",
@@ -123,8 +130,9 @@ export default {
         },
         {
           name: "狂少",
-          tags: ["BOT工程师", "大数据工程师"],
-          selfContent: "暂无数据",
+          tags: ["BOT工程师", "大数据工程师", "人工智能工程师"],
+          selfContent:
+            "大数据分析师，主攻大数据与人工智能方向，现已加入写PPT混吃等死行列",
           imgUrl:
             "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/ks.jpg",
         },
@@ -163,20 +171,6 @@ export default {
           imgUrl:
             "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/qpne.jpg",
         },
-        // {
-        //   name: "渣男",
-        //   tags: ["后端工程师"],
-        //   selfContent: "我真的想让这个世界变得更好，但是他们不给我源代码……",
-        //   imgUrl:
-        //     "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/zn.png",
-        // },
-        // {
-        //   name: "轩轩",
-        //   tags: ["后端工程师"],
-        //   selfContent: "代码乱得只有自己能看懂，公司不可替代的重要人才",
-        //   imgUrl:
-        //     "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/yz.jpg",
-        // },
         {
           name: "墨卿",
           tags: ["前端工程师"],
