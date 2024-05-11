@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
  * @LastEditors: chaichai 2787922490@qq.com
- * @LastEditTime: 2024-05-10 16:52:35
+ * @LastEditTime: 2024-05-10 17:45:22
  * @FilePath: \4433studio\src\views\joinView\index.vue
  * @Description: 
  * 
@@ -305,7 +305,7 @@ export default {
       console.log(elForm, "elForm");
       var sJs1 = Math.floor(Math.random() * aHeight);
       var sJs2 = Math.floor(Math.random() * aWidth);
-      if (this.flag === 1) {
+      if (this.flag === 10) {
         this.$message.success("开个玩笑，我们才不填表单嘞 ο(=•ω＜=)ρ⌒☆ ");
         elForm.style.display = "none";
         realForm.style.display = "block";

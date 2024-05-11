@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
  * @LastEditors: chaichai 2787922490@qq.com
- * @LastEditTime: 2024-05-10 15:18:19
+ * @LastEditTime: 2024-05-11 17:28:39
  * @FilePath: \4433studio\src\views\teamView\index.vue
  * @Description: 
  * 
@@ -36,7 +36,7 @@ export default {
       teams: [
         {
           name: "柴柴",
-          tags: ["前端工程师", "前端负责人", "工作室负责人"],
+          tags: ["前端负责人", "前端工程师", "工作室负责人"],
           selfContent:
             "vue二次元个人博客模板作者，热爱花里胡哨的开发，涉猎广泛，励志做一名优秀的、花里胡哨的程序员",
           imgUrl:
@@ -44,7 +44,7 @@ export default {
         },
         {
           name: "张三同学",
-          tags: ["前端工程师", "前端副负责人", "工作室副负责人"],
+          tags: ["前端副负责人", "前端工程师", "工作室副负责人"],
           selfContent:
             "爱搞事的闲散青年，兴趣广泛，善于行动，热爱生活，立志成为一名18线全栈攻城狮，我的城科微信小程序作者。",
           imgUrl:
@@ -101,6 +101,13 @@ export default {
             "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/dd.jpg",
         },
         {
+          name: "小小柴",
+          tags: ["美工", "图形设计师"],
+          selfContent: "暂无数据",
+          imgUrl:
+            "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/xxc.jpg",
+        },
+        {
           name: "绾柔",
           tags: ["UI设计师", "工作室吉祥物", "天之都开发组", "工作室讲师"],
           selfContent: "巴拉巴拉巴拉",
@@ -115,11 +122,25 @@ export default {
             "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/qingting.jpg",
         },
         {
+          name: "狂少",
+          tags: ["BOT工程师", "大数据工程师"],
+          selfContent: "暂无数据",
+          imgUrl:
+            "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/ks.jpg",
+        },
+        {
           name: "莫熊",
           tags: ["后端工程师", "天之都开发组"],
           selfContent: "看不到未来其实是看到了未来。",
           imgUrl:
             "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/moxiong.jpg",
+        },
+        {
+          name: "大狗老师",
+          tags: ["前端工程师", "chai-UI开发组"],
+          selfContent: "这个人没什么想说的.jpg",
+          imgUrl:
+            "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/DG.png",
         },
         {
           name: "离",
@@ -178,11 +199,25 @@ export default {
             "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/SAO2233.jpg",
         },
         {
+          name: "旺仔",
+          tags: ["前端工程师"],
+          selfContent: "摸鱼型选手",
+          imgUrl:
+            "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/wz.jpg",
+        },
+        {
           name: "鲨鲨",
           tags: ["后端工程师"],
           selfContent: "无所谓，我会出手",
           imgUrl:
             "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/ss.jpg",
+        },
+        {
+          name: "狂少",
+          tags: ["BOT工程师", "大数据工程师"],
+          selfContent: "无所谓，我会出手",
+          imgUrl:
+            "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/ks.jpg",
         },
       ],
     };
