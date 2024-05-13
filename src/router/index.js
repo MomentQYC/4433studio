@@ -36,11 +36,11 @@ const routes = [
     name: 'show',
     component: () => import('@/views/showView/index.vue')
   },
-  {
+  /* {
     path: '/login',
     name: 'login',
     component: () => import('@/views/loginView/index.vue')
-  },
+  }, */
   {
     path: '/contact',
     name: 'contact',
@@ -54,6 +54,10 @@ const routes = [
   //   // which is lazy-loaded when the route is visited.
   //   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   // }
+  {
+    path: '*',
+    redirect: '/'
+  }
 ]
 
 const router = new VueRouter({
