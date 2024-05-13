@@ -2,7 +2,7 @@
  * @Author: Chai chai 2787922490@qq.com
  * @Date: 2022-11-09 20:41:58
  * @LastEditors: chaichai 2787922490@qq.com
- * @LastEditTime: 2024-05-11 17:40:20
+ * @LastEditTime: 2024-05-13 09:19:01
  * @FilePath: \4433studio\src\views\teamView\index.vue
  * @Description: 
  * 
@@ -205,13 +205,6 @@ export default {
           selfContent: "无所谓，我会出手",
           imgUrl:
             "https://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/ss.jpg",
-        },
-        {
-          name: "狂少",
-          tags: ["BOT工程师", "大数据工程师"],
-          selfContent: "无所谓，我会出手",
-          imgUrl:
-            "http://4433studio.oss-cn-hangzhou.aliyuncs.com/headPortrait/ks.jpg",
         },
       ],
     };
