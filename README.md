@@ -2,7 +2,7 @@
  * @Author: Nico
  * @Date: 2023-02-10 16:49:14
  * @LastEditors: chaichai 2787922490@qq.com
- * @LastEditTime: 2024-05-13 09:39:41
+ * @LastEditTime: 2024-05-13 10:32:02
  * @Description: 
 -->
 # 4433studio
@@ -16,7 +16,7 @@ npm install
 ### Compiles and hot-reloads for development
 
 ```
-npm run serve
+npm run chaichai
 ```
 
 ### Compiles and minifies for production
