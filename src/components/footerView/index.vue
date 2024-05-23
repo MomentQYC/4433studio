@@ -9,7 +9,7 @@
  * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved. 
 -->
 <template>
-  <div class="footer-box">Copyright © 2024 cqucc4433</div>
+  <div class="footer-box">Copyright &copy; {{ new Date().getFullYear() }} cqucc4433</div>
 </template>
 
 <script>
